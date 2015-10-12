@@ -18,7 +18,7 @@ Evernote clone built on Rails and React. Minimum features:
 * [View Wireframes][view]
 * [DB schema][schema]
 
-[view]: ./docs/wireframes.md
+[view]: ./docs/views.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
