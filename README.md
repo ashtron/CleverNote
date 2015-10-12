@@ -44,6 +44,7 @@ In this phase I will implement custom note styling, as found in most web applica
 I will spend the final phase finishing CSS styling to make my app look as presentable and realistic as possible.
 
 ### Bonus Features
-- [ ] "Code" option
--   [ ] syntax highlighting, running code in-browser)
-- [ ] Reminders
+* "Code" option
+  * Syntax highlighting
+  * Running code in-browser
+* Reminders
