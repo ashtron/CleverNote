@@ -15,3 +15,13 @@
 ![loginsignup]
 
 [loginsignup]: ./wireframes/LogInSignUp.png
+
+## Component Hierarchy
+
+* App
+  * NotesIndex (Index Route)
+    * NoteForm
+    * NoteIndexItem
+  * NotebooksIndex
+    * NotebookIndexItem
+  * NotebookForm
