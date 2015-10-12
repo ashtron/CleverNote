@@ -2,10 +2,16 @@
 
 ![noteform]
 
-[noteform]: ./NoteForm.png
+[noteform]: ./wireframes/NoteForm.png
 
 ## NotebookForm
 
 ![notebookform]
 
-[notebookform]: ./NotebookForm.png
+[notebookform]: ./wireframes/NotebookForm.png
+
+## LogIn/SignUp
+
+![loginsignup]
+
+[loginsignup]: ./wireframes/LogInSignUp.png
