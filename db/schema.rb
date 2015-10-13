@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013160150) do
+ActiveRecord::Schema.define(version: 20151013222410) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title",                       null: false
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20151013160150) do
     t.boolean  "archived",    default: false
   end
 
-  add_index "notes", ["author_id"], name: "index_notes_on_author_id", unique: true
-  add_index "notes", ["notebook_id"], name: "index_notes_on_notebook_id", unique: true
+  add_index "notes", ["author_id"], name: "index_notes_on_author_id"
+  add_index "notes", ["notebook_id"], name: "index_notes_on_notebook_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
