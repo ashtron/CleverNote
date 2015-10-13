@@ -1,4 +1,4 @@
-/* globals React, ReactRouter, NoteForm, Sidebar */
+/* globals React, ReactRouter, NoteForm, Sidebar, NotesList */
 
 $(function() {
   var root = document.getElementById('content');
@@ -12,6 +12,7 @@ $(function() {
           <div>
             <Sidebar/>
             <NotesList/>
+            <NoteForm/>
             {this.props.children}
           </div>
       );

@@ -42,14 +42,6 @@ time, mark, audio, video {
 	border: 1px, solid, black;
 }
 
-.sidebar {
-  border: 1px solid black;
-  float: left;
-  position: fixed;
-  width: 70px;
-  height: 1000px;
-}
-
 .group:after {
   content: "";
   display: block;
@@ -62,8 +54,27 @@ time, mark, audio, video {
 	float: left;
 }
 
+.notes-list {
+	width: 350px;
+	height: 1000px;
+	background-color: #FAFAFA;
+}
+
+.notes-list-header {
+	border: 2px solid black;
+	height: 75px;
+}
+
 h1 {
   text-align: center;
+}
+
+.sidebar {
+	background-color: #E9E9E9;
+  float: left;
+  position: fixed;
+  width: 70px;
+  height: 1000px;
 }
 
 .sidebar > ul {
@@ -74,4 +85,10 @@ h1 {
 
 .sidebar > ul > li {
   margin: 0 0 50px 0;
+}
+
+.note-input {
+	border: 2px solid black;
+	width: 100px;
+	height: 100px;
 }
