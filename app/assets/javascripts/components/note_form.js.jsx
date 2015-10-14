@@ -32,9 +32,17 @@ var NoteForm = React.createClass({
 
     var title = event.target.title.value;
     var body = event.target.body.value;
-    var note = { title: title, body: body};
+    var note = { title: title, body: body };
 
-    ApiUtil.createNote(note);
+    var matchingNotes = NoteStore.all().filter(function(note) {
+      return (title === note.title && body === note.body);
+    });
+
+    if (matchingNotes > 0) {
+      //Save note.
+    } else {
+      ApiUtil.createNote(note);
+    }
   },
 
   render: function() {
