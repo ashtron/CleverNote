@@ -82,3 +82,8 @@ h1 {
 .sidebar > ul > li {
   margin: 0 0 50px 0;
 }
+
+.notes-list > div {
+	border: 2px solid black;
+	height: 75px;
+}
