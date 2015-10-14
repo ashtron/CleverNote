@@ -21,7 +21,9 @@ var NotesList = React.createClass({
         <div className="notes-list-header">Notes</div>
           {
             NoteStore.all().map(function(note) {
-              return (<NoteListItem title={note.title}></NoteListItem>);
+              return (
+                <NoteListItem title={note.title} body={note.body}></NoteListItem>
+              );
             })
           }
       </div>
