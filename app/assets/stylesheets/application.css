@@ -86,7 +86,7 @@ h1 {
 
 .notes-list > div {
 	text-align: center;
-	border: 2px solid black;
+	border: 1px solid grey;
 	height: 75px;
 }
 
