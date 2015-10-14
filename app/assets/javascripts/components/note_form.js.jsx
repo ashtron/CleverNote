@@ -20,7 +20,7 @@ var NoteForm = React.createClass({
   },
 
   getInitialState: function() {
-    return ({ title: "Title", body: "" });
+    return ({ title: "Title", body: "", mode: this.props.mode });
   },
 
   componentDidMount: function() {

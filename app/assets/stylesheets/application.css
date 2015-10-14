@@ -58,7 +58,6 @@ textarea {
 .notes-list {
 	overflow-y: scroll;
 	float: left;
-	margin-left: 70px;
 	width: 350px;
 	height: 1000px;
 	background-color: #FAFAFA;
@@ -80,7 +79,6 @@ textarea {
 .sidebar {
 	background-color: #E9E9E9;
   float: left;
-  position: fixed;
   width: 70px;
   height: 1000px;
 }
@@ -118,4 +116,8 @@ h1 {
 
 .notes-list > div:hover {
 	background-color: cornflowerblue;
+}
+
+.nav {
+	float: left;
 }

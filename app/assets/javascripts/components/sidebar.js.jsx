@@ -6,11 +6,11 @@ var Sidebar = React.createClass({
       <nav className="group">
         <div className="sidebar">
           <ul>
-            <li>New Note</li>
+            <li><a href="/#/notes/new">New Note</a></li>
             <li>Search</li>
           </ul>
           <ul>
-            <li>Notes</li>
+            <li><a href="/#/notes">Notes</a></li>
             <li>Notebooks</li>
             <li>Tags</li>
           </ul>
