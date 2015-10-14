@@ -11,6 +11,14 @@ var NoteForm = React.createClass({
     this.setState({ title: title, body: body });
   },
 
+  _titleChange: function(event) {
+    this.setState({title: event.target.value });
+  },
+
+  _bodyChange: function(event) {
+    this.setState({body: event.target.value });
+  },
+
   getInitialState: function() {
     return ({ title: "Title", body: "" });
   },
@@ -33,13 +41,13 @@ var NoteForm = React.createClass({
     return (
       <div>
         <form onSubmit={this.submit}>
-          <input className="title-field"
+          <input onChange={this._titleChange} className="title-field"
             type="text"
             name="title"
             value={this.state.title}>
           </input>
 
-          <textarea className="note-input"
+          <textarea onChange={this._bodyChange} className="note-input"
             name="body"
             value={this.state.body}>
           </textarea>
