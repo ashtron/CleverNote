@@ -14,15 +14,20 @@ var NotesList = React.createClass({
     NoteStore.addChangeListener(this._onChange);
   },
 
+  onClick: function() {
+    ApiUtil.fetchNotes();
+  },
+
   render: function() {
     return (
       <div className="notes-list">
         <div className="notes-list-header">Notes</div>
           {
             NoteStore.all().map(function(note) {
-              return (<NoteListItem>{note.title}</NoteListItem>);
+              return (<div>{note.title}</div>);
             })
           }
+          <button onClick={this.onClick}>Fetch Notes</button>
       </div>
     );
   }
