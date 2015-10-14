@@ -40,6 +40,7 @@ var NoteForm = React.createClass({
       ApiActions.selectNote(note);
     } else {
       note = $.extend(selectedNote, note);
+      ApiActions.selectNote(note);
       ApiUtil.updateNote(note);
     }
   },
