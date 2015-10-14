@@ -6,10 +6,7 @@ var NoteListItem = React.createClass({
     var body = event.target.dataset.body;
     var note = { title: title, body: body };
 
-    // Can't select a different note once a note has
-    // been selected.
-
-    if ($.isEmptyObject(NoteStore.selectedNote())) {
+    if ($.isEmptyObject(NoteStore.selectedNote()) || note.id !== NoteStore.selectedNote().id) {
       var sNote = NoteStore.all().filter(function(exNote) {
         return note.title === exNote.title;
       });
