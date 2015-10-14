@@ -36,6 +36,7 @@ time, mark, audio, video {
 }
 
 .notes-list {
+	overflow-y: scroll;
 	float: left;
 	margin-left: 70px;
 	width: 350px;
@@ -84,6 +85,7 @@ h1 {
 }
 
 .notes-list > div {
+	text-align: center;
 	border: 2px solid black;
 	height: 75px;
 }

@@ -1,4 +1,4 @@
-/* globals React, NoteStore, NoteListItem */
+/* globals React, NoteStore, NoteListItem, ApiUtil */
 
 var NotesList = React.createClass({
   _onChange: function() {
@@ -10,12 +10,9 @@ var NotesList = React.createClass({
   },
 
   componentDidMount: function() {
+    ApiUtil.fetchNotes();
     this.setState({ notes: NoteStore.all() });
     NoteStore.addChangeListener(this._onChange);
-  },
-
-  onClick: function() {
-    ApiUtil.fetchNotes();
   },
 
   render: function() {
@@ -27,7 +24,6 @@ var NotesList = React.createClass({
               return (<div>{note.title}</div>);
             })
           }
-          <button onClick={this.onClick}>Fetch Notes</button>
       </div>
     );
   }
