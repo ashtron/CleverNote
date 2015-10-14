@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_no_user!
-    # redirect_to new_session_url unless current_user.nil?
+    redirect_to :root unless current_user.nil?
   end
 
   def current_user

@@ -12,11 +12,11 @@ var NoteForm = React.createClass({
   },
 
   _titleChange: function(event) {
-    this.setState({title: event.target.value });
+    this.setState({ title: event.target.value });
   },
 
   _bodyChange: function(event) {
-    this.setState({body: event.target.value });
+    this.setState({ body: event.target.value });
   },
 
   getInitialState: function() {
