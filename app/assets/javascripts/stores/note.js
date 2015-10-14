@@ -46,6 +46,10 @@
         case NoteConstants.NOTE_SELECTED:
           NoteStore.select(payload.note);
           NoteStore.emit(CHANGE_EVENT);
+          break;
+        case NoteConstants.NOTE_UPDATED:
+          NoteStore.resetNotes(payload.notes);
+          NoteStore.emit(CHANGE_EVENT);
       }
     })
   });

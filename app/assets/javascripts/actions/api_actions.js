@@ -22,5 +22,12 @@ var ApiActions = {
       actionType: NoteConstants.NOTE_SELECTED,
       note: note
     });
+  },
+
+  updateNote: function(notes) {
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTE_UPDATED,
+      notes: notes
+    });
   }
 };

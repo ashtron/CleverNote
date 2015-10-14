@@ -11,6 +11,8 @@ $(function() {
       return (
           <div>
             <Sidebar/>
+            <NotesList/>
+            <NoteForm/>
             {this.props.children}
           </div>
       );
@@ -19,8 +21,6 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
-        <Route path="notes" component={NotesList}/>
-        <Route path="notes/new" component={NoteForm}/>
       </Route>
   );
 

@@ -20,5 +20,16 @@ var ApiUtil = {
         ApiActions.addNote(note);
       }
     });
+  },
+
+  updateNote: function(note) {
+    $.ajax({
+      type: "PATCH",
+      url: "api/notes/" + note.id,
+      data: { note: note },
+      success: function(notes) {
+        ApiActions.updateNote(notes);
+      }
+    });
   }
 };

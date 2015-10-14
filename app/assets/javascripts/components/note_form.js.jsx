@@ -1,4 +1,4 @@
-/* globals React, ApiUtil, NoteStore */
+/* globals React, ApiUtil, NoteStore, ApiActions */
 
 var _title = "Title";
 var _body = "Body";
@@ -33,15 +33,14 @@ var NoteForm = React.createClass({
     var title = event.target.title.value;
     var body = event.target.body.value;
     var note = { title: title, body: body };
+    var selectedNote = NoteStore.selectedNote();
 
-    var matchingNotes = NoteStore.all().filter(function(note) {
-      return (title === note.title && body === note.body);
-    });
-
-    if (matchingNotes > 0) {
-      //Save note.
-    } else {
+    if ($.isEmptyObject(selectedNote)) {
       ApiUtil.createNote(note);
+      ApiActions.selectNote(note);
+    } else {
+      note = $.extend(selectedNote, note);
+      ApiUtil.updateNote(note);
     }
   },
 
