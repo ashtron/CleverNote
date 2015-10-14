@@ -3,6 +3,7 @@
 (function(root){
   var CHANGE_EVENT = "change";
   var _notes = [];
+  var _selectedNote = {};
 
   root.NoteStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
@@ -11,6 +12,14 @@
 
     add: function(note) {
       _notes.push(note);
+    },
+
+    select: function(note) {
+      _selectedNote = note;
+    },
+
+    selectedNote: function() {
+      return Object.assign({}, _selectedNote);
     },
 
     addChangeListener: function(callback){
@@ -32,6 +41,10 @@
           break;
         case NoteConstants.NOTE_CREATED:
           NoteStore.add(payload.note);
+          NoteStore.emit(CHANGE_EVENT);
+          break;
+        case NoteConstants.NOTE_SELECTED:
+          NoteStore.select(payload.note);
           NoteStore.emit(CHANGE_EVENT);
       }
     })

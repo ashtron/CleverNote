@@ -13,5 +13,14 @@ var ApiActions = {
       actionType: NoteConstants.NOTE_CREATED,
       note: note
     });
+  },
+
+  // Move to separate actions file?
+
+  selectNote: function(note) {
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTE_SELECTED,
+      note: note
+    });
   }
 };
