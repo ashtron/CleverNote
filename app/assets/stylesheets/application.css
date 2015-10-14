@@ -38,30 +38,16 @@ time, mark, audio, video {
 .notes-list {
 	float: left;
 	margin-left: 70px;
-	width: 100px;
-	height: 2000px;
-	border: 1px, solid, black;
-}
-
-/*.group:after {
-  content: "";
-  display: block;
-  clear: left;
-}*/
-
-.notes-list {
 	width: 350px;
 	height: 1000px;
 	background-color: #FAFAFA;
 }
 
-.notes-list-header {
-	border: 2px solid black;
-	height: 75px;
-}
-
-h1 {
-  text-align: center;
+.note-input {
+	width: 50%;
+	height: 1000px;
+	float: left;
+	font-size: 18px;
 }
 
 .sidebar {
@@ -72,6 +58,21 @@ h1 {
   height: 1000px;
 }
 
+/*.group:after {
+  content: "";
+  display: block;
+  clear: left;
+}*/
+
+.notes-list-header {
+	border: 2px solid black;
+	height: 75px;
+}
+
+h1 {
+  text-align: center;
+}
+
 .sidebar > ul {
   display: inline;
   text-align: center;
@@ -80,11 +81,4 @@ h1 {
 
 .sidebar > ul > li {
   margin: 0 0 50px 0;
-}
-
-.note-input {
-	width: 1000px;
-	height: 900px;
-	float: left;
-	font-size: 18px;
 }
