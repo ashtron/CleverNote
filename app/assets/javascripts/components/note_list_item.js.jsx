@@ -11,7 +11,10 @@ var NoteListItem = React.createClass({
 
   render: function() {
     return (
-      <div data-title={this.props.title} data-body={this.props.body} onClick={this.click}>
+      <div
+        data-title={this.props.title}
+        data-body={this.props.body}
+        onClick={this.click}>
         {this.props.title}
       </div>
     );

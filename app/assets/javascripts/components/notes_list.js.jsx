@@ -20,9 +20,12 @@ var NotesList = React.createClass({
       <div className="notes-list">
         <div className="notes-list-header">Notes</div>
           {
-            NoteStore.all().map(function(note) {
+            this.state.notes.map(function(note) {
               return (
-                <NoteListItem title={note.title} body={note.body}></NoteListItem>
+                <NoteListItem
+                  title={note.title}
+                  body={note.body}>
+                </NoteListItem>
               );
             })
           }

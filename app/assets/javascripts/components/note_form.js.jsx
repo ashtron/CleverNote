@@ -41,13 +41,17 @@ var NoteForm = React.createClass({
     return (
       <div>
         <form onSubmit={this.submit}>
-          <input onChange={this._titleChange} className="title-field"
+          <input
+            onChange={this._titleChange}
+            className="title-field"
             type="text"
             name="title"
             value={this.state.title}>
           </input>
 
-          <textarea onChange={this._bodyChange} className="note-input"
+          <textarea
+            onChange={this._bodyChange}
+            className="note-input"
             name="body"
             value={this.state.body}>
           </textarea>
