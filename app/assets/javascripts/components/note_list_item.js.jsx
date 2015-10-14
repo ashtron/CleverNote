@@ -3,7 +3,7 @@
 var NoteListItem = React.createClass({
   render: function() {
     return (
-      <div></div>
+      <div>{this.props.title}</div>
     );
   }
 });
