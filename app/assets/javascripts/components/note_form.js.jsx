@@ -1,8 +1,5 @@
 /* globals React, ApiUtil, NoteStore, ApiActions */
 
-var _title = "Title";
-var _body = "Body";
-
 var NoteForm = React.createClass({
   _onChange: function() {
     var title = NoteStore.selectedNote().title;
@@ -64,7 +61,7 @@ var NoteForm = React.createClass({
             value={this.state.body}>
           </textarea>
 
-          <button>Create Note</button>
+          <button>Save Note</button>
         </form>
       </div>
     );

@@ -116,6 +116,7 @@ h1 {
 
 .notes-list > div:hover {
 	background-color: cornflowerblue;
+	transition: background-color 500ms;
 }
 
 .nav {
