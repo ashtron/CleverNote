@@ -9,16 +9,16 @@ var ApiUtil = {
         ApiActions.receiveAll(notes);
       }
     });
+  },
+
+  createNote: function(note) {
+    $.ajax({
+      type: "POST",
+      url: "/api/notes",
+      data: { note: note },
+      success: function(note) {
+        ApiActions.addNote(note);
+      }
+    });
   }
 };
-
-
-
-// $.ajax({
-//   type: "POST",
-//   url: "/api/notes",
-//   data: params,
-//   success: function(notes) {
-//     console.log(notes);
-//   }
-// });

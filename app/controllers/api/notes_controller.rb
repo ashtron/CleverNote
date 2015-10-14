@@ -5,9 +5,12 @@ class Api::NotesController < ApplicationController
   end
 
   def create
-    @note = Note.create(note_params)
+    note = Note.new(note_params)
+    note.author_id = current_user.id
+    note.notebook_id = 1 # FIX!
+    note.save
     # Add error handling.
-    render json: @note
+    render json: note
   end
 
   def update

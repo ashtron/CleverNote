@@ -51,6 +51,12 @@ time, mark, audio, video {
 	font-size: 18px;
 }
 
+.title-field {
+	width: 50%;
+	height: 30px;
+	font-size: 18px;
+}
+
 .sidebar {
 	background-color: #E9E9E9;
   float: left;

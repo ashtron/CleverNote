@@ -5,8 +5,12 @@
   var _notes = [];
 
   root.NoteStore = $.extend({}, EventEmitter.prototype, {
-    all: function(){
+    all: function() {
       return _notes.slice(0);
+    },
+
+    add: function(note) {
+      _notes.push(note);
     },
 
     addChangeListener: function(callback){
@@ -24,6 +28,10 @@
       switch (payload.actionType) {
         case NoteConstants.NOTES_RECEIVED:
           NoteStore.resetNotes(payload.notes);
+          NoteStore.emit(CHANGE_EVENT);
+          break;
+        case NoteConstants.NOTE_CREATED:
+          NoteStore.add(payload.note);
           NoteStore.emit(CHANGE_EVENT);
       }
     })
