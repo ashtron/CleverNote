@@ -1,6 +1,7 @@
 class Api::NotesController < ApplicationController
   def index
-    render json: Note.all
+    notes = Note.all.select { |note| note.author_id == current_user.id }
+    render json: notes
   end
 
   def create
