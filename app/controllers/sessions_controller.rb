@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login_user!(user)
-      # Do something here.
+      redirect_to :root
     end
   end
 
