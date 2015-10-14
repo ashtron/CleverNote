@@ -35,6 +35,26 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+/*input {
+	border: none;
+	overflow: auto;
+	outline: none;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}*/
+
 .notes-list {
 	overflow-y: scroll;
 	float: left;
@@ -71,11 +91,6 @@ time, mark, audio, video {
   clear: left;
 }*/
 
-.notes-list-header {
-	border: 2px solid black;
-	height: 75px;
-}
-
 h1 {
   text-align: center;
 }
@@ -90,9 +105,14 @@ h1 {
   margin: 0 0 50px 0;
 }
 
+.notes-list-header {
+	border-bottom: 1px solid grey;
+	height: 75px;
+}
+
 .notes-list > div {
 	text-align: center;
-	border: 1px solid grey;
+	border-bottom: 1px solid grey;
 	height: 75px;
 }
 
