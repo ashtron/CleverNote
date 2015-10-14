@@ -36,23 +36,18 @@ time, mark, audio, video {
 }
 
 .notes-list {
+	float: left;
 	margin-left: 70px;
 	width: 100px;
 	height: 2000px;
 	border: 1px, solid, black;
 }
 
-.group:after {
+/*.group:after {
   content: "";
   display: block;
-  clear: both;
-}
-
-.note-input {
-	margin-left: 80px;
-	position: absolute;
-	float: left;
-}
+  clear: left;
+}*/
 
 .notes-list {
 	width: 350px;
@@ -88,7 +83,8 @@ h1 {
 }
 
 .note-input {
-	border: 2px solid black;
-	width: 100px;
-	height: 100px;
+	width: 1000px;
+	height: 900px;
+	float: left;
+	font-size: 18px;
 }

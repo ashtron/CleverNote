@@ -21,7 +21,6 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
-        <Route path="notes/new" component={NoteForm}/>
       </Route>
   );
 

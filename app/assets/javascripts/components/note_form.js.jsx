@@ -5,7 +5,7 @@ var NoteForm = React.createClass({
     return (
       <div>
         <form>
-          <textarea className="note-input" rows="10" cols="50"></textarea>
+          <textarea className="note-input"></textarea>
         </form>
       </div>
     );
