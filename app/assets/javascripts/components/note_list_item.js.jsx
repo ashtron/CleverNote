@@ -22,15 +22,20 @@ var NoteListItem = React.createClass({
   },
 
   deleteClick: function(event) {
-    var title = this.props.title;
-    var body = this.props.body;
-    var note = { title: title, body: body };
+    var message = "Are you sure you want to delete this message?";
+    var result = window.confirm(message);
 
-    var selectedNote = NoteStore.all().filter(function(storeNote) {
-      return note.title === storeNote.title;
-    });
+    if (result) {
+      var title = this.props.title;
+      var body = this.props.body;
+      var note = { title: title, body: body };
 
-    ApiUtil.deleteNote(selectedNote[0]);
+      var selectedNote = NoteStore.all().filter(function(storeNote) {
+        return note.title === storeNote.title;
+      });
+
+      ApiUtil.deleteNote(selectedNote[0]);
+    }
   },
 
   render: function() {
