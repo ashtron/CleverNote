@@ -16,8 +16,8 @@ class Api::NotesController < ApplicationController
   def update
     note = Note.find(note_params[:id])
     note.update(note_params)
-    # notes = Note.all.select { |note| note.author_id == current_user.id }
-    render json: note
+    notes = Note.all.select { |note| note.author_id == current_user.id }
+    render json: notes
   end
 
   def destroy

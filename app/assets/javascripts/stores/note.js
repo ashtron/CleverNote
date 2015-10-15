@@ -53,7 +53,8 @@
           NoteStore.emit(CHANGE_EVENT);
           break;
         case NoteConstants.NOTE_UPDATED:
-          NoteStore.select(payload.note);
+          ApiUtil.fetchNotes();
+          NoteStore.resetNotes(payload.notes);
           NoteStore.emit(CHANGE_EVENT);
       }
     })

@@ -27,8 +27,8 @@ var ApiUtil = {
       type: "PATCH",
       url: "api/notes/" + note.id,
       data: { note: note },
-      success: function(note) {
-        ApiActions.updateNote(note);
+      success: function(notes) {
+        ApiActions.updateNote(notes);
       }
     });
   }
