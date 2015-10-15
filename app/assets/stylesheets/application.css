@@ -35,10 +35,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-/*input {
+input {
 	border: none;
 	overflow: auto;
 	outline: none;
+	color: cornflowerblue;
 
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -53,7 +54,7 @@ textarea {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-}*/
+}
 
 .notes-list {
 	overflow-y: scroll;
@@ -109,6 +110,7 @@ h1 {
 }
 
 .notes-list > div {
+	font-size: 18px;
 	text-align: center;
 	border-bottom: 1px solid grey;
 	height: 75px;
@@ -116,7 +118,11 @@ h1 {
 
 .notes-list > div:hover {
 	background-color: cornflowerblue;
-	transition: background-color 500ms;
+	transition: background-color 400ms;
+}
+
+.notes-list > .notes-list-header:hover {
+	background-color: #FAFAFA;
 }
 
 .nav {
