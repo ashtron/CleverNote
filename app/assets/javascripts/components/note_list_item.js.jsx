@@ -2,6 +2,9 @@
 
 var NoteListItem = React.createClass({
   click: function(event) {
+    $("div").removeClass("selected");
+    $(event.target).addClass("selected");
+
     var title = event.target.dataset.title;
     var body = event.target.dataset.body;
     var note = { title: title, body: body };
