@@ -22,6 +22,8 @@ var Editor = React.createClass({
       		</span>
 
       		<span className="ql-format-group"><span title="Bold" className="ql-format-button ql-bold"></span><span className="ql-format-separator"></span><span title="Italic" className="ql-format-button ql-italic"></span><span className="ql-format-separator"></span><span title="Underline" className="ql-format-button ql-underline"></span><span className="ql-format-separator"></span><span title="Strikethrough" className="ql-format-button ql-strike"></span></span>
+
+
       		<span className="ql-format-group">
       			<span title="List" className="ql-format-button ql-list"></span>
             <span className="ql-format-separator"></span>
@@ -45,6 +47,7 @@ var Editor = React.createClass({
       				<option value="justify" label="Justify"></option>
       			</select>
       		</span>
+
       		<span className="ql-format-group"><span title="Link" className="ql-format-button ql-link"></span></span>
       	</div>
 
