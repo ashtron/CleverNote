@@ -1,4 +1,5 @@
 /* globals React, ReactRouter, NoteForm, Sidebar, NotesList */
+/* globals NotesPage, NewNotes, Editor, Navbar */
 
 $(function() {
   var root = document.getElementById('content');
@@ -22,6 +23,7 @@ $(function() {
         <IndexRoute component={NotesPage}/>
         <Route path="notes" component={NotesPage}/>
         <Route path="notes/new" component={NewNotes}/>
+        <Route path="editor" component={Editor}/>
       </Route>
   );
 
