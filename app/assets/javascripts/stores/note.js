@@ -18,6 +18,10 @@
       _selectedNote = note;
     },
 
+    deselect: function() {
+      _selectedNote = {};
+    },
+
     selectedNote: function() {
       return Object.assign({}, _selectedNote);
     },

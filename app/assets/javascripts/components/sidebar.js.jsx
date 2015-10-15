@@ -1,4 +1,4 @@
-/* globals React */
+/* globals React, NoteStore */
 
 var Sidebar = React.createClass({
   render: function() {
@@ -6,7 +6,9 @@ var Sidebar = React.createClass({
       <nav className="group">
         <div className="sidebar">
           <ul>
-            <li><a href="/#/notes/new">New Note</a></li>
+            <li><a onClick={ NoteStore.deselect() }
+              href="/#/notes/new">New Note
+            </a></li>
             <li>Search</li>
           </ul>
           <ul>

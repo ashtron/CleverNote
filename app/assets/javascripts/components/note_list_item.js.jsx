@@ -6,12 +6,15 @@ var NoteListItem = React.createClass({
     var body = event.target.dataset.body;
     var note = { title: title, body: body };
 
-    if ($.isEmptyObject(NoteStore.selectedNote()) || note.id !== NoteStore.selectedNote().id) {
-      var sNote = NoteStore.all().filter(function(exNote) {
-        return note.title === exNote.title;
+    var noneSelected = $.isEmptyObject(NoteStore.selectedNote());
+    var differentSelected = note.id !== NoteStore.selectedNote().id;
+
+    if (noneSelected || differentSelected) {
+      var selectedNote = NoteStore.all().filter(function(storeNote) {
+        return note.title === storeNote.title;
       });
 
-      ApiActions.selectNote(sNote[0]);
+      ApiActions.selectNote(selectedNote[0]);
     }
   },
 
