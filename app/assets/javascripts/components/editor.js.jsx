@@ -51,7 +51,7 @@ var Editor = React.createClass({
             </span>
           </span>
 
-          <span className="toolbar-title">Bill's Cool Note</span>
+          <input className="toolbar-title" defaultValue="Title"></input>
       	</div>
 
       	<div id="editor" className="editor ql-container ql-snow">

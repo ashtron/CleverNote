@@ -76,7 +76,11 @@ body {
 }
 
 .toolbar-title {
+  border: none;
+  outline: none;
+  text-align: right;
   margin-right: 7px;
   float: right;
-  font-size: 21px;
+  font-size: 22px;
+  margin-top: -2px;
 }
