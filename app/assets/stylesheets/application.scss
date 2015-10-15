@@ -133,15 +133,6 @@ h1 {
 	height: 75px;
 }
 
-.notes-list > div:hover {
-	background-color: #D1ECFF;
-	transition: background-color 400ms;
-}
-
-.notes-list > .notes-list-header:hover {
-	background-color: #FAFAFA;
-}
-
 .nav {
 	float: left;
 }
@@ -158,4 +149,8 @@ h1 {
 .save-button {
   margin-top: 10px;
   float:left;
+}
+
+.delete-button {
+  float: right;
 }

@@ -31,5 +31,16 @@ var ApiUtil = {
         ApiActions.updateNote(notes);
       }
     });
+  },
+
+  deleteNote: function(note) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/notes/" + note.id,
+      data: { note: note },
+      success: function(notes) {
+        ApiActions.deleteNote(notes);
+      }
+    });
   }
 };

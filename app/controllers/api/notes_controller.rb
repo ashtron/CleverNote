@@ -21,6 +21,10 @@ class Api::NotesController < ApplicationController
   end
 
   def destroy
+    note = Note.find(note_params[:id])
+    note.destroy
+    notes = Note.all.select { |note| note.author_id == current_user.id }
+    render json: notes
   end
 
   private

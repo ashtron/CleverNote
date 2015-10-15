@@ -29,5 +29,12 @@ var ApiActions = {
       actionType: NoteConstants.NOTE_UPDATED,
       note: notes
     });
+  },
+
+  deleteNote: function(notes) {
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTE_DELETED,
+      notes: notes
+    });
   }
 };

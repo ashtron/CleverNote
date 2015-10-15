@@ -1,7 +1,7 @@
-/* globals React, ApiActions, NoteStore */
+/* globals React, ApiActions, NoteStore, ApiUtil */
 
 var NoteListItem = React.createClass({
-  click: function(event) {
+  noteClick: function(event) {
     $("li").removeClass("selected");
     $(event.target).addClass("selected");
 
@@ -21,12 +21,25 @@ var NoteListItem = React.createClass({
     }
   },
 
+  deleteClick: function(event) {
+    var title = this.props.title;
+    var body = this.props.body;
+    var note = { title: title, body: body };
+
+    var selectedNote = NoteStore.all().filter(function(storeNote) {
+      return note.title === storeNote.title;
+    });
+
+    ApiUtil.deleteNote(selectedNote[0]);
+  },
+
   render: function() {
     return (
       <li
         className="list-group-item"
-        onClick={this.click}>
+        onClick={this.noteClick}>
         {this.props.title}
+        <button className="delete-button" onClick={this.deleteClick}>x</button>
       </li>
     );
   }

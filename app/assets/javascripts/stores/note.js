@@ -56,6 +56,11 @@
           ApiUtil.fetchNotes();
           NoteStore.resetNotes(payload.notes);
           NoteStore.emit(CHANGE_EVENT);
+          break;
+        case NoteConstants.NOTE_DELETED:
+          NoteStore.resetNotes(payload.notes);
+          NoteStore.deselect();
+          NoteStore.emit(CHANGE_EVENT);
       }
     })
   });
