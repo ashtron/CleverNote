@@ -3,19 +3,13 @@
 var Sidebar = React.createClass({
   render: function() {
     return (
-      <nav className="group">
-        <div className="sidebar">
-          <ul>
-            <li><a onClick={ NoteStore.deselect() }
-              href="/#/notes/new">New Note
-            </a></li>
-            <li>Search</li>
-          </ul>
-          <ul>
-            <li><a href="/#/notes">Notes</a></li>
-            <li>Notebooks</li>
-            <li>Tags</li>
-          </ul>
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="#">
+              CleverNote
+            </a>
+          </div>
         </div>
       </nav>
     );

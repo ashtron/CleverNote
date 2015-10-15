@@ -10,7 +10,7 @@ $(function() {
     render: function() {
       return (
           <div>
-            <Sidebar/>
+            <Navbar/>
             {this.props.children}
           </div>
       );
@@ -19,6 +19,7 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
+        <IndexRoute component={NotesPage}/>
         <Route path="notes" component={NotesPage}/>
         <Route path="notes/new" component={NewNotes}/>
       </Route>

@@ -59,6 +59,13 @@ textarea {
     box-shadow: none;
 }
 
+.navbar {
+  position: relative;
+  margin-bottom: 0;
+  background-color: #C5C5C5;
+  color: black;
+}
+
 .notes-list > .selected {
 	border-top: 1px solid grey;
 	border-bottom: 2px solid grey;
