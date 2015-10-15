@@ -2,11 +2,11 @@
 
 var NoteListItem = React.createClass({
   click: function(event) {
-    $("div").removeClass("selected");
+    $("li").removeClass("selected");
     $(event.target).addClass("selected");
 
-    var title = event.target.dataset.title;
-    var body = event.target.dataset.body;
+    var title = this.props.title;
+    var body = this.props.body;
     var note = { title: title, body: body };
 
     var noneSelected = $.isEmptyObject(NoteStore.selectedNote());
@@ -23,12 +23,11 @@ var NoteListItem = React.createClass({
 
   render: function() {
     return (
-      <div
-        data-title={this.props.title}
-        data-body={this.props.body}
+      <li
+        className="list-group-item"
         onClick={this.click}>
         {this.props.title}
-      </div>
+      </li>
     );
   }
 });

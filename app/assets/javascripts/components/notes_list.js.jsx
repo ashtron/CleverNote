@@ -23,11 +23,10 @@ var NotesList = React.createClass({
           {
             this.state.notes.map(function(note) {
               return (
-                <li className="list-group-item"
+                <NoteListItem
                   title={note.title}
                   body={note.body}>{note.title}
-
-                </li>
+                </NoteListItem>
               );
             })
           }
