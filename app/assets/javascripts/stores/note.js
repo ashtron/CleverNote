@@ -45,6 +45,7 @@
           break;
         case NoteConstants.NOTE_CREATED:
           NoteStore.add(payload.note);
+          NoteStore.select(payload.note);
           NoteStore.emit(CHANGE_EVENT);
           break;
         case NoteConstants.NOTE_SELECTED:
@@ -52,7 +53,7 @@
           NoteStore.emit(CHANGE_EVENT);
           break;
         case NoteConstants.NOTE_UPDATED:
-          NoteStore.resetNotes(payload.notes);
+          NoteStore.select(payload.note);
           NoteStore.emit(CHANGE_EVENT);
       }
     })

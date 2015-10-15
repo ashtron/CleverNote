@@ -57,10 +57,10 @@ textarea {
 }
 
 .notes-list > .selected {
-	border-top: 1px solid black;
-	border-bottom: 2px solid black;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
+	border-top: 1px solid grey;
+	border-bottom: 2px solid grey;
+	border-left: 2px solid grey;
+	border-right: 2px solid grey;
 	background-color: cornflowerblue;
 }
 

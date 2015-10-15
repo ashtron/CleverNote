@@ -34,11 +34,10 @@ var NoteForm = React.createClass({
 
     if ($.isEmptyObject(selectedNote)) {
       ApiUtil.createNote(note);
-      ApiActions.selectNote(note);
     } else {
       note = $.extend(selectedNote, note);
-      ApiUtil.updateNote(note);
       ApiActions.selectNote(note);
+      ApiUtil.updateNote(note);
     }
   },
 

@@ -24,10 +24,10 @@ var ApiActions = {
     });
   },
 
-  updateNote: function(notes) {
+  updateNote: function(note) {
     AppDispatcher.dispatch({
       actionType: NoteConstants.NOTE_UPDATED,
-      notes: notes
+      note: note
     });
   }
 };
