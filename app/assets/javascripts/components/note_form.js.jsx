@@ -47,6 +47,7 @@ var NoteForm = React.createClass({
         <form onSubmit={this.submit}>
           <input
             onChange={this._titleChange}
+            placeholder="Title"
             className="title-field"
             type="text"
             name="title"
@@ -55,12 +56,13 @@ var NoteForm = React.createClass({
 
           <textarea
             onChange={this._bodyChange}
+            placeholder="Enter text here..."
             className="note-input"
             name="body"
             value={this.state.body}>
           </textarea>
 
-          <button>Save Note</button>
+          <button className="save-button">Save Note</button>
         </form>
       </div>
     );

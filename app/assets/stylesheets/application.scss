@@ -39,9 +39,10 @@ time, mark, audio, video {
 }
 
 input {
+  border: none;
 	overflow: auto;
 	outline: none;
-	color: cornflowerblue;
+	color: black;
 
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -58,7 +59,7 @@ textarea {
 }
 
 li:hover {
-  background-color: cornflowerblue;
+  background-color: #D1ECFF;
   transition: background-color 400ms;
 }
 
@@ -74,7 +75,7 @@ li:hover {
 	border-bottom: 2px solid grey;
 	border-left: 2px solid grey;
 	border-right: 2px solid grey;
-	background-color: cornflowerblue;
+	background-color: #D1ECFF;
 }
 
 .notes-list {
@@ -86,8 +87,8 @@ li:hover {
 }
 
 .note-input {
-	width: 50%;
-	height: 1000px;
+	width: 65%;
+	height: 300px;
 	float: left;
 	font-size: 18px;
 }
@@ -132,16 +133,8 @@ h1 {
 	height: 75px;
 }
 
-.notes-list-header {
-  padding-top: 22px;
-	border-bottom: 1px solid grey;
-	height: 75px;
-  font-size: 36px;
-  // background: url();
-}
-
 .notes-list > div:hover {
-	background-color: cornflowerblue;
+	background-color: #D1ECFF;
 	transition: background-color 400ms;
 }
 
@@ -151,4 +144,18 @@ h1 {
 
 .nav {
 	float: left;
+}
+
+.notes-list-header {
+  padding-top: 22px;
+	border-bottom: 1px solid grey;
+	height: 75px;
+  font-size: 36px;
+  background-color: white;
+  // background: url();
+}
+
+.save-button {
+  margin-top: 10px;
+  float:left;
 }
