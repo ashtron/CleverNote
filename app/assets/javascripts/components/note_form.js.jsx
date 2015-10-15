@@ -44,7 +44,7 @@ var NoteForm = React.createClass({
   render: function() {
     return (
       <div>
-        <form onSubmit={this.submit}>
+        <form className="note-form group" onSubmit={this.submit}>
           <input
             onChange={this._titleChange}
             placeholder="Title"

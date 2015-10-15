@@ -1,0 +1,30 @@
+.title-field {
+  border: none;
+	overflow: auto;
+	outline: none;
+	color: black;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
+  width: 50%;
+  height: 30px;
+  font-size: 18px;
+}
+
+textarea {
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.note-input {
+	width: 65%;
+	height: 300px;
+	float: left;
+	font-size: 18px;
+}

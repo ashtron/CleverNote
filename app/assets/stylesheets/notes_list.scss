@@ -1,0 +1,30 @@
+.notes-list > .selected {
+	border-top: 1px solid grey;
+	border-bottom: 2px solid grey;
+	border-left: 2px solid grey;
+	border-right: 2px solid grey;
+	background-color: #D1ECFF;
+}
+
+.notes-list {
+	overflow-y: scroll;
+	float: left;
+	width: 350px;
+	height: 1000px;
+	background-color: #FAFAFA;
+}
+
+.notes-list-header {
+  padding-top: 14px;
+  padding-left: 14px;
+	border: 1px solid grey;
+	border-left: none;
+	height: 50px;
+  font-size: 24px;
+  background-color: white;
+}
+
+.list-group-item:hover {
+  background-color: #D1ECFF;
+  transition: background-color 400ms;
+}

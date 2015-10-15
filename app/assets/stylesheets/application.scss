@@ -38,119 +38,16 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-input {
-  border: none;
-	overflow: auto;
-	outline: none;
-	color: black;
-
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-textarea {
-    overflow: auto;
-    outline: none;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-li:hover {
-  background-color: #D1ECFF;
-  transition: background-color 400ms;
-}
-
-.navbar {
-  position: relative;
-  margin-bottom: 0;
-  background-color: #C5C5C5;
-  color: black;
-}
-
-.notes-list > .selected {
-	border-top: 1px solid grey;
-	border-bottom: 2px solid grey;
-	border-left: 2px solid grey;
-	border-right: 2px solid grey;
-	background-color: #D1ECFF;
-}
-
-.notes-list {
-	overflow-y: scroll;
-	float: left;
-	width: 350px;
-	height: 1000px;
-	background-color: #FAFAFA;
-}
-
-.note-input {
-	width: 65%;
-	height: 300px;
-	float: left;
-	font-size: 18px;
-}
-
-.title-field {
-	width: 50%;
-	height: 30px;
-	font-size: 18px;
-}
-
-.sidebar {
-	background-color: #E9E9E9;
-  float: left;
-  width: 70px;
-  height: 1000px;
-}
-
-/*.group:after {
+.group:after {
+  clear: both;
   content: "";
   display: block;
-  clear: left;
-}*/
-
-h1 {
-  text-align: center;
 }
 
-.sidebar > ul {
-  display: inline;
-  text-align: center;
-  list-style-type: none;
+body {
+  font-family: "Times New Roman", Times, serif;
 }
 
-.sidebar > ul > li {
-  margin: 0 0 50px 0;
-}
-
-.notes-list > div {
-	font-size: 18px;
-	text-align: center;
-	border-bottom: 1px solid grey;
-	height: 75px;
-}
-
-.nav {
-	float: left;
-}
-
-.notes-list-header {
-  padding-top: 22px;
-	border-bottom: 1px solid grey;
-	height: 75px;
-  font-size: 36px;
-  background-color: white;
-  // background: url();
-}
-
-.save-button {
-  margin-top: 10px;
-  float:left;
-}
-
-.delete-button {
-  float: right;
+.note-form {
+  float: left;
 }
