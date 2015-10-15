@@ -1,3 +1,5 @@
+/* globals React */
+
 var Navbar = React.createClass({
   render: function() {
     return (
@@ -39,6 +41,6 @@ var Navbar = React.createClass({
           </div>
         </div>
       </nav>
-    )
+    );
   }
-})
+});

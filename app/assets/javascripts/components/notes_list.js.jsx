@@ -19,16 +19,19 @@ var NotesList = React.createClass({
     return (
       <div className="notes-list">
         <div className="notes-list-header">Notes</div>
+        <ul className="list-group">
           {
             this.state.notes.map(function(note) {
               return (
-                <NoteListItem
+                <li className="list-group-item"
                   title={note.title}
-                  body={note.body}>
-                </NoteListItem>
+                  body={note.body}>{note.title}
+
+                </li>
               );
             })
           }
+          </ul>
       </div>
     );
   }
