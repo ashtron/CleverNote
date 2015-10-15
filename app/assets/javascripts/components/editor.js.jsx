@@ -7,11 +7,54 @@ var Editor = React.createClass({
         container: '#toolbar'
     });
   },
+
   render: function() {
     return (
       <div className="quill-wrapper">
-        <div id="toolbar" className="toolbar ql-toolbar ql-snow"><span className="ql-format-group"><span title="Size" className="ql-size ql-picker"><span className="editor-logo">CleverNote</span><span className="ql-picker-options"><span data-value="10px" className="ql-picker-item">Small</span><span data-value="13px" className="ql-picker-item ql-selected">Normal</span><span data-value="18px" className="ql-picker-item">Large</span><span data-value="32px" className="ql-picker-item">Huge</span></span></span><select title="Size" className="ql-size" ><option value="10px">Small</option><option value="13px" selected="">Normal</option><option value="18px">Large</option><option value="32px">Huge</option></select></span><span className="ql-format-group"><span title="Bold" className="ql-format-button ql-bold"></span><span className="ql-format-separator"></span><span title="Italic" className="ql-format-button ql-italic"></span><span className="ql-format-separator"></span><span title="Underline" className="ql-format-button ql-underline"></span><span className="ql-format-separator"></span><span title="Strikethrough" className="ql-format-button ql-strike"></span></span><span className="ql-format-group"><span title="List" className="ql-format-button ql-list"></span><span className="ql-format-separator"></span><span title="Bullet" className="ql-format-button ql-bullet"></span><span className="ql-format-separator"></span><span title="Text Alignment" className="ql-align ql-picker"><span className="ql-picker-label" data-value="left"></span><span className="ql-picker-options"><span data-value="left" className="ql-picker-item ql-selected"></span><span data-value="center" className="ql-picker-item"></span><span data-value="right" className="ql-picker-item"></span><span data-value="justify" className="ql-picker-item"></span></span></span><select title="Text Alignment" className="ql-align" ><option value="left" label="Left" selected=""></option><option value="center" label="Center"></option><option value="right" label="Right"></option><option value="justify" label="Justify"></option></select></span><span className="ql-format-group"><span title="Link" className="ql-format-button ql-link"></span></span></div>
-        <div id="editor" className="editor ql-container ql-snow"><div className="ql-multi-cursor"><span className="cursor left hidden" ><span className="cursor-flag"> <span className="cursor-triangle top" ></span> <span className="cursor-name" >Gandalf</span> <span className="cursor-triangle bottom" ></span> </span> <span className="cursor-caret" ></span></span></div><div className="ql-editor authorship" id="ql-editor-2" contenteditable="true"><div><span >One Ring to Rule Them All</span></div><div><a href="http://en.wikipedia.org/wiki/One_Ring">http://en.wikipedia.org/wiki/One_Ring</a></div><div><br/></div><div>Three Rings for the <u>Elven-kings</u> under the sky,</div><div>Seven for the <u>Dwarf-lords</u> in halls of stone,</div><div>Nine for <u>Mortal Men</u>, doomed to die,</div><div>One for the <u>Dark Lord</u> on his dark throne.</div><div><br/></div><div>In the Land of Mordor where the Shadows lie.</div><div>One Ring to <b>rule</b> them all, One Ring to <b>find</b> them,</div><div>One Ring to <b>bring</b> them all and in the darkness <b>bind</b> them.</div><div>In the Land of Mordor where the Shadows lie.</div></div><div className="ql-tooltip ql-link-tooltip" ><span className="title">Visit URL:&nbsp;</span> <a href="#" className="url" target="_blank"></a> <input className="input" type="text"></input> <span>&nbsp;-&nbsp;</span> <a href="javascript:;" className="change">Change</a> <a href="javascript:;" className="remove">Remove</a> <a href="javascript:;" className="done">Done</a></div><div className="ql-paste-manager" contenteditable="true"></div></div>
+      	<div id="toolbar" className="toolbar ql-toolbar ql-snow">
+      		<span className="ql-format-group">
+      			<select title="Size" className="ql-size" >
+      				<option value="10px">Small</option>
+      				<option value="13px" selected="">Normal</option>
+      				<option value="18px">Large</option>
+      				<option value="32px">Huge</option>
+      			</select>
+      		</span>
+
+      		<span className="ql-format-group"><span title="Bold" className="ql-format-button ql-bold"></span><span className="ql-format-separator"></span><span title="Italic" className="ql-format-button ql-italic"></span><span className="ql-format-separator"></span><span title="Underline" className="ql-format-button ql-underline"></span><span className="ql-format-separator"></span><span title="Strikethrough" className="ql-format-button ql-strike"></span></span>
+      		<span className="ql-format-group">
+      			<span title="List" className="ql-format-button ql-list"></span>
+            <span className="ql-format-separator"></span>
+            <span title="Bullet" className="ql-format-button ql-bullet"></span>
+
+          <span className="ql-format-group">
+            <span title="Text Alignment" className="ql-align ql-picker">
+              <span className="ql-picker-options">
+                <span data-value="left" className="ql-picker-item ql-selected"></span>
+                <span data-value="center" className="ql-picker-item"></span>
+                <span data-value="right" className="ql-picker-item"></span>
+                <span data-value="justify" className="ql-picker-item"></span>
+              </span>
+            </span>
+          </span>
+
+      			<select title="Text Alignment" className="ql-align" >
+      				<option value="left" label="Left" selected=""></option>
+      				<option value="center" label="Center"></option>
+      				<option value="right" label="Right"></option>
+      				<option value="justify" label="Justify"></option>
+      			</select>
+      		</span>
+      		<span className="ql-format-group"><span title="Link" className="ql-format-button ql-link"></span></span>
+      	</div>
+
+      	<div id="editor" className="editor ql-container ql-snow">
+      		<div className="ql-multi-cursor"><span className="cursor left hidden" ><span className="cursor-flag"> <span className="cursor-triangle top" ></span> <span className="cursor-name" >Gandalf</span> <span className="cursor-triangle bottom" ></span> </span> <span className="cursor-caret" ></span></span></div>
+      		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true">
+      			<div>Start typing.</div>
+      		</div>
+      		<div className="ql-paste-manager" contenteditable="true"></div>
+      	</div>
       </div>
     );
   }
