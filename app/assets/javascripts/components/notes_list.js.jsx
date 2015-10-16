@@ -27,6 +27,7 @@ var NotesList = React.createClass({
               this.state.notes.map(function(note) {
                 return (
                   <NoteListItem
+                    key={note.id}
                     title={note.title}
                     body={note.body}>{note.title}
                   </NoteListItem>

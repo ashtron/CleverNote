@@ -73,7 +73,7 @@ var Editor = React.createClass({
         		<span className="ql-format-group">
         			<select title="Size" className="ql-size" >
         				<option value="10px">Small</option>
-        				<option value="13px" selected="">Normal</option>
+        				<option value="13px" defaultValue="">Normal</option>
         				<option value="18px">Large</option>
         				<option value="32px">Huge</option>
         			</select>
@@ -97,7 +97,7 @@ var Editor = React.createClass({
 
             <span className="ql-format-group">
         			<select title="Text Alignment" className="ql-align" >
-        				<option value="left" label="Left" selected=""></option>
+        				<option value="left" label="Left" defaultValue=""></option>
         				<option value="center" label="Center"></option>
         				<option value="right" label="Right"></option>
         				<option value="justify" label="Justify"></option>
@@ -130,9 +130,9 @@ var Editor = React.createClass({
 
         <div className="editor-container">
         	<div id="editor" className="editor ql-container ql-snow">
-        		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true"></div>
+        		<div className="ql-editor authorship" id="ql-editor-2" contentEditable="true"></div>
 
-        		<div className="ql-paste-manager" contenteditable="true"></div>
+        		<div className="ql-paste-manager" contentEditable="true"></div>
         	</div>
         </div>
       </div>

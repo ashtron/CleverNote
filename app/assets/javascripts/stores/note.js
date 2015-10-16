@@ -35,7 +35,11 @@
     },
 
     resetNotes: function(notes) {
-      _notes = notes;
+      // Find out why notes is sometimes undefined.
+
+      if (typeof notes !== "undefined") {
+        _notes = notes;
+      }
     },
 
     dispatcherID: AppDispatcher.register(function(payload) {
