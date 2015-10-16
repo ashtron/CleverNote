@@ -109,6 +109,16 @@ var Editor = React.createClass({
               </span>
             </span>
 
+            <span className="ql-format-group">
+              <span onClick={this.onCreateClick} title="New" id="new-button" className="ql-format-button">New
+              </span>
+            </span>
+
+            <span className="ql-format-group">
+              <span onClick={this.submit} title="Save" id="save-button" className="ql-format-button">Save
+              </span>
+            </span>
+
             <input
               className="toolbar-title"
               onChange={this._titleChange}
@@ -125,9 +135,6 @@ var Editor = React.createClass({
         		<div className="ql-paste-manager" contenteditable="true"></div>
         	</div>
         </div>
-
-        <button onClick={this.submit} className="save-button">Save</button>
-        <button onClick={this.onCreateClick} className="create-button">Create</button>
       </div>
     );
   }
