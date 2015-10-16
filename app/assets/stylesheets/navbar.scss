@@ -4,11 +4,18 @@
 
 .navbar {
   position: relative;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   background-color: #C5C5C5;
   color: black;
 }
 
 .sign-out-link {
 	float: right;
+}
+
+.nav .navbar .navbar-default {
+}
+
+#nav-container {
+	margin-bottom: 0px;
 }
