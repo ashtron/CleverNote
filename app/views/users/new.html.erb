@@ -1,26 +1,21 @@
-<h1>Sign Up</h1>
+<div class="sign-up-container">
+  <form class="form-signup" action="<%= users_url %>" method="post">
+    <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <label for="user_username" class="sr-only">Username</label>
+    <input type="username" name="user[username]" id="user_username" class="form-control" placeholder="Username" required="" autofocus="">
+
+    <label for="user_password" class="sr-only">Password</label>
+    <input type="password" name="user[password]" id="user_password" class="form-control" placeholder="Password" required="">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+  </form>
+</div>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <%= render "shared/errors" %>
-
-<form action="<%= users_url %>" method="post">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>">
-
-  <label for="user_username">User Name</label>
-  <input type="text"
-         name="user[username]"
-         id="user_username"
-         value="<%= @user.username %>">
-  <br>
-
-  <label for="user_password">Password</label>
-  <input type="password"
-         name="user[password]"
-         id="user_password"
-         value="<%= @user.password %>">
-  <br>
-
-  <input type="submit">
-</form>
