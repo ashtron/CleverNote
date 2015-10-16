@@ -1,10 +1,10 @@
-/* globals React, NoteStore */
+/* globals React, NoteStore, ApiUtil */
 
 var Navbar = React.createClass({
   onNotesClick: function() {
   },
 
-  onCreateNoteClick: function() {
+  onCreateNoteClick: function(event) {
     NoteStore.deselect();
   },
 

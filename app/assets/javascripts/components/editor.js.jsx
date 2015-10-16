@@ -1,11 +1,56 @@
-/* globals React, Quill */
+/* globals React, Quill, NoteStore, ApiUtil, ApiActions */
 
 var Editor = React.createClass({
   componentDidMount: function() {
     var editor = new Quill('#editor');
-      editor.addModule('toolbar', {
-        container: '#toolbar'
+    editor.addModule('toolbar', {
+      container: '#toolbar'
     });
+
+    var ed = this;
+    editor.on('text-change', function(delta, source) {
+      var body = JSON.stringify(this.getContents());
+      ed.setState( { body: body } );
+    });
+
+    NoteStore.addChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    var title = NoteStore.selectedNote().title;
+    var body = NoteStore.selectedNote().body;
+
+    this.setState({ title: title, body: body });
+  },
+
+  _titleChange: function(event) {
+    debugger;
+    this.setState({ title: event.target.value });
+  },
+
+  _bodyChange: function(event) {
+    this.setState({ body: event.target.value });
+  },
+
+  getInitialState: function() {
+    return ({ title: "Title", body: "", mode: this.props.mode });
+  },
+
+  submit: function(event) {
+    event.preventDefault();
+
+    var title = event.target.title.value;
+    var body = event.target.body.value;
+    var note = { title: title, body: body };
+    var selectedNote = NoteStore.selectedNote();
+
+    if ($.isEmptyObject(selectedNote)) {
+      ApiUtil.createNote(note);
+    } else {
+      note = $.extend(selectedNote, note);
+      ApiActions.selectNote(note);
+      ApiUtil.updateNote(note);
+    }
   },
 
   render: function() {
@@ -51,22 +96,10 @@ var Editor = React.createClass({
             </span>
           </span>
 
-          <input className="toolbar-title" defaultValue="Title"></input>
+          <input  onChange={this._titleChange} className="toolbar-title" placeholder="Title"></input>
       	</div>
 
       	<div id="editor" className="editor ql-container ql-snow">
-      		<div className="ql-multi-cursor">
-            <span className="cursor left hidden">
-              <span className="cursor-flag">
-                <span className="cursor-triangle top"></span>
-                <span className="cursor-name">Gandalf</span>
-                <span className="cursor-triangle bottom"></span>
-              </span>
-
-              <span className="cursor-caret"></span>
-            </span>
-          </div>
-
       		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true">
       			<div>Start typing.</div>
       		</div>
