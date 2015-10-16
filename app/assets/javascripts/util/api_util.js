@@ -42,5 +42,14 @@ var ApiUtil = {
         ApiActions.deleteNote(notes);
       }
     });
+  },
+
+  signOutUser: function() {
+    $.ajax({
+      type: "DELETE",
+      url: "session",
+      success: function() {
+      }
+    });
   }
 };

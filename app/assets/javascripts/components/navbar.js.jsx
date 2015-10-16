@@ -9,7 +9,7 @@ var Navbar = React.createClass({
   },
 
   onSignOutClick: function() {
-    console.log("Signed out.");
+    ApiUtil.signOutUser();
   },
 
   render: function() {
