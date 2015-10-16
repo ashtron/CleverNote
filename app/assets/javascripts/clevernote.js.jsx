@@ -20,7 +20,6 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
-        <IndexRoute component={NotesPage}/>
         <Route path="notes" component={NotesPage}/>
         <Route path="notes/new" component={NewNotes}/>
         <Route path="editor" component={Editor}/>

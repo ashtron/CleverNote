@@ -5,7 +5,7 @@ var NotesPage = React.createClass({
     return (
       <div>
         <NotesList/>
-        <NoteForm/>
+        <Editor/>
       </div>
     );
   }

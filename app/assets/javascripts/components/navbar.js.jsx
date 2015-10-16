@@ -8,6 +8,10 @@ var Navbar = React.createClass({
     NoteStore.deselect();
   },
 
+  onSignOutClick: function() {
+    console.log("Signed out.");
+  },
+
   render: function() {
     return (
       <nav className="navbar navbar-default">
@@ -39,12 +43,17 @@ var Navbar = React.createClass({
                 </ul>
               </li>
             </ul>
+
             <form className="navbar-form navbar-left" role="search">
               <div className="form-group">
                 <input type="text" className="form-control" placeholder="Search"/>
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
+
+            <ul className="nav navbar-nav">
+              <li onClick={this.onSignOutClick}><a href="#">Sign Out</a></li>
+            </ul>
 
           </div>
         </div>
