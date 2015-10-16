@@ -46,6 +46,7 @@ var Editor = React.createClass({
 
   onCreateClick: function() {
     NoteStore.deselect();
+    editor.setText("");
   },
 
   submit: function(event) {
