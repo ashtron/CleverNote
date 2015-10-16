@@ -24,7 +24,6 @@ var Editor = React.createClass({
   },
 
   _titleChange: function(event) {
-    debugger;
     this.setState({ title: event.target.value });
   },
 
@@ -33,7 +32,7 @@ var Editor = React.createClass({
   },
 
   getInitialState: function() {
-    return ({ title: "Title", body: "", mode: this.props.mode });
+    return ({ title: "Title", body: "" });
   },
 
   submit: function(event) {
@@ -56,56 +55,64 @@ var Editor = React.createClass({
   render: function() {
     return (
       <div className="quill-wrapper">
-      	<div id="toolbar" className="toolbar ql-toolbar ql-snow">
-      		<span className="ql-format-group">
-      			<select title="Size" className="ql-size" >
-      				<option value="10px">Small</option>
-      				<option value="13px" selected="">Normal</option>
-      				<option value="18px">Large</option>
-      				<option value="32px">Huge</option>
-      			</select>
-      		</span>
+        <div className="toolbar-container">
+        	<div id="toolbar" className="toolbar ql-toolbar ql-snow">
+        		<span className="ql-format-group">
+        			<select title="Size" className="ql-size" >
+        				<option value="10px">Small</option>
+        				<option value="13px" selected="">Normal</option>
+        				<option value="18px">Large</option>
+        				<option value="32px">Huge</option>
+        			</select>
+        		</span>
 
-      		<span className="ql-format-group">
-            <span title="Bold" className="ql-format-button ql-bold"></span>
-            <span className="ql-format-separator"></span>
-            <span title="Italic" className="ql-format-button ql-italic"></span>
-            <span className="ql-format-separator"></span>
-            <span title="Underline" className="ql-format-button ql-underline"></span>
-            <span className="ql-format-separator"></span>
-            <span title="Strikethrough" className="ql-format-button ql-strike"></span>
-          </span>
-
-      		<span className="ql-format-group">
-      			<span title="List" className="ql-format-button ql-list"></span>
-            <span className="ql-format-separator"></span>
-            <span title="Bullet" className="ql-format-button ql-bullet"></span>
-          </span>
-
-          <span className="ql-format-group">
-      			<select title="Text Alignment" className="ql-align" >
-      				<option value="left" label="Left" selected=""></option>
-      				<option value="center" label="Center"></option>
-      				<option value="right" label="Right"></option>
-      				<option value="justify" label="Justify"></option>
-      			</select>
-          </span>
-
-      		<span className="ql-format-group">
-            <span title="Link" className="ql-format-button ql-link">
+        		<span className="ql-format-group">
+              <span title="Bold" className="ql-format-button ql-bold"></span>
+              <span className="ql-format-separator"></span>
+              <span title="Italic" className="ql-format-button ql-italic"></span>
+              <span className="ql-format-separator"></span>
+              <span title="Underline" className="ql-format-button ql-underline"></span>
+              <span className="ql-format-separator"></span>
+              <span title="Strikethrough" className="ql-format-button ql-strike"></span>
             </span>
-          </span>
 
-          <input  onChange={this._titleChange} className="toolbar-title" placeholder="Title"></input>
-      	</div>
+        		<span className="ql-format-group">
+        			<span title="List" className="ql-format-button ql-list"></span>
+              <span className="ql-format-separator"></span>
+              <span title="Bullet" className="ql-format-button ql-bullet"></span>
+            </span>
 
-      	<div id="editor" className="editor ql-container ql-snow">
-      		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true">
-      			<div>Start typing.</div>
-      		</div>
+            <span className="ql-format-group">
+        			<select title="Text Alignment" className="ql-align" >
+        				<option value="left" label="Left" selected=""></option>
+        				<option value="center" label="Center"></option>
+        				<option value="right" label="Right"></option>
+        				<option value="justify" label="Justify"></option>
+        			</select>
+            </span>
 
-      		<div className="ql-paste-manager" contenteditable="true"></div>
-      	</div>
+        		<span className="ql-format-group">
+              <span title="Link" className="ql-format-button ql-link">
+              </span>
+            </span>
+
+            <input
+              className="toolbar-title"
+              onChange={this._titleChange}
+              value={this.state.title}>
+            </input>
+        	</div>
+        </div>
+
+        <div className="editor-container">
+        	<div id="editor" className="editor ql-container ql-snow">
+        		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true">
+        			{ NoteStore.selectedNote().body }
+        		</div>
+
+        		<div className="ql-paste-manager" contenteditable="true"></div>
+        	</div>
+        </div>
       </div>
     );
   }
