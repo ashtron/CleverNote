@@ -41,7 +41,7 @@ var Editor = React.createClass({
   },
 
   getInitialState: function() {
-    return ({ title: "Title", body: "" });
+    return ({ title: "", body: "" });
   },
 
   onCreateClick: function() {

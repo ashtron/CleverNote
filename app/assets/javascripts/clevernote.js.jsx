@@ -22,7 +22,6 @@ $(function() {
       <Route path="/" component={App}>
         <Route path="notes" component={NotesPage}/>
         <Route path="notes/new" component={Editor}/>
-        <Route path="editor" component={Editor}/>
       </Route>
   );
 
