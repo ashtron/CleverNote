@@ -16,6 +16,8 @@ var Editor = React.createClass({
       ed.setState( { body: body } );
     });
 
+    this.refs.titleInput.getDOMNode().focus();
+
     NoteStore.addChangeListener(this._onChange);
   },
 
@@ -47,6 +49,7 @@ var Editor = React.createClass({
   onCreateClick: function() {
     NoteStore.deselect();
     editor.setText("");
+    this.refs.titleInput.getDOMNode().focus();
   },
 
   submit: function(event) {
@@ -121,6 +124,7 @@ var Editor = React.createClass({
             </span>
 
             <input
+              ref="titleInput"
               className="toolbar-title"
               onChange={this._titleChange}
               placeholder="Title"
