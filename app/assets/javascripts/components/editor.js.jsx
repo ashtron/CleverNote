@@ -1,8 +1,10 @@
 /* globals React, Quill, NoteStore, ApiUtil, ApiActions */
 
+var editor = {};
+
 var Editor = React.createClass({
   componentDidMount: function() {
-    var editor = new Quill('#editor');
+    editor = new Quill('#editor');
     editor.addModule('toolbar', {
       container: '#toolbar'
     });
@@ -10,6 +12,7 @@ var Editor = React.createClass({
     var ed = this;
     editor.on('text-change', function(delta, source) {
       var body = JSON.stringify(this.getContents());
+
       ed.setState( { body: body } );
     });
 
@@ -21,6 +24,12 @@ var Editor = React.createClass({
     var body = NoteStore.selectedNote().body;
 
     this.setState({ title: title, body: body });
+
+    var selectedNote = NoteStore.selectedNote();
+
+    if (!$.isEmptyObject(selectedNote)) {
+      editor.setContents(JSON.parse(selectedNote.body));
+    }
   },
 
   _titleChange: function(event) {
@@ -38,8 +47,8 @@ var Editor = React.createClass({
   submit: function(event) {
     event.preventDefault();
 
-    var title = event.target.title.value;
-    var body = event.target.body.value;
+    var title = this.state.title;
+    var body = this.state.body;
     var note = { title: title, body: body };
     var selectedNote = NoteStore.selectedNote();
 
@@ -50,6 +59,8 @@ var Editor = React.createClass({
       ApiActions.selectNote(note);
       ApiUtil.updateNote(note);
     }
+
+    editor.setContents(JSON.parse(selectedNote.body));
   },
 
   render: function() {
@@ -106,13 +117,13 @@ var Editor = React.createClass({
 
         <div className="editor-container">
         	<div id="editor" className="editor ql-container ql-snow">
-        		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true">
-        			{ NoteStore.selectedNote().body }
-        		</div>
+        		<div className="ql-editor authorship" id="ql-editor-2" contenteditable="true"></div>
 
         		<div className="ql-paste-manager" contenteditable="true"></div>
         	</div>
         </div>
+
+        <button onClick={this.submit} className="save-button">Save Note</button>
       </div>
     );
   }
