@@ -19,7 +19,9 @@ var NotesList = React.createClass({
     return (
       <div>
         <div className="notes-list">
-          <div className="notes-list-header">Notes</div>
+          <div className="notes-list-header">Notes
+            <span className="note-count">{NoteStore.all().length + " notes"}</span>
+          </div>
           <ul className="list-group">
             {
               this.state.notes.map(function(note) {

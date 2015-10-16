@@ -44,6 +44,10 @@ var Editor = React.createClass({
     return ({ title: "Title", body: "" });
   },
 
+  onCreateClick: function() {
+    NoteStore.deselect();
+  },
+
   submit: function(event) {
     event.preventDefault();
 
@@ -59,8 +63,6 @@ var Editor = React.createClass({
       ApiActions.selectNote(note);
       ApiUtil.updateNote(note);
     }
-
-    editor.setContents(JSON.parse(selectedNote.body));
   },
 
   render: function() {
@@ -110,6 +112,7 @@ var Editor = React.createClass({
             <input
               className="toolbar-title"
               onChange={this._titleChange}
+              placeholder="Title"
               value={this.state.title}>
             </input>
         	</div>
@@ -123,7 +126,8 @@ var Editor = React.createClass({
         	</div>
         </div>
 
-        <button onClick={this.submit} className="save-button">Save Note</button>
+        <button onClick={this.submit} className="save-button">Save</button>
+        <button onClick={this.onCreateClick} className="create-button">Create</button>
       </div>
     );
   }

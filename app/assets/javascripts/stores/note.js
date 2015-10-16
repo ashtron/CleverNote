@@ -20,6 +20,7 @@
 
     deselect: function() {
       _selectedNote = {};
+      this.emit(CHANGE_EVENT);
     },
 
     selectedNote: function() {
