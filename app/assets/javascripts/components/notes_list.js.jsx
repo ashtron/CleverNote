@@ -16,11 +16,20 @@ var NotesList = React.createClass({
   },
 
   render: function() {
+    var noteCount = "";
+    var notesLength = this.state.notes.length;
+
+    if (notesLength === 1) {
+      noteCount = notesLength + " note";
+    } else {
+      noteCount = notesLength + " notes";
+    }
+
     return (
       <div>
         <div className="notes-list">
           <div className="notes-list-header">Notes
-            <span className="note-count">{this.state.notes.length + " notes"}</span>
+            <span className="note-count">{noteCount}</span>
           </div>
           <ul className="list-group">
             {

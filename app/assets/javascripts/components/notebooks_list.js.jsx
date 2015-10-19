@@ -16,11 +16,20 @@ var NotebooksList = React.createClass({
   },
 
   render: function() {
+    var notebookCount = "";
+    var notebooksLength = this.state.notebooks.length;
+
+    if (notebooksLength === 1) {
+      notebookCount = notebooksLength + " notebook";
+    } else {
+      notebookCount = notebooksLength + " notebooks";
+    }
+
     return (
       <div>
         <div className="notebooks-list">
           <div className="notebooks-list-header">Notebooks
-            <span className="note-count">{NotebookStore.all().length + " notebooks"}</span>
+            <span className="note-count">{notebookCount}</span>
           </div>
           <ul className="list-group">
             {
