@@ -24,8 +24,6 @@ var NoteEditor = React.createClass({
   },
 
   _onChange: function() {
-    ApiUtil.fetchTags(NoteStore.selectedNote().id);
-
     var title = NoteStore.selectedNote().title;
     var body = NoteStore.selectedNote().body;
 

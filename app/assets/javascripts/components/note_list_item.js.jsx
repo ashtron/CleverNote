@@ -18,6 +18,7 @@ var NoteListItem = React.createClass({
       });
 
       ApiActions.selectNote(selectedNote[0]);
+      ApiUtil.fetchTags(NoteStore.selectedNote().id);
     }
   },
 
