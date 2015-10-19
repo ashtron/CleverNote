@@ -140,6 +140,24 @@ var NoteEditor = React.createClass({
 
         		<div className="ql-paste-manager" contentEditable="true"></div>
         	</div>
+
+          <div className="tag-list-container">
+            <div className="tag-list">
+              <span className="tag">
+                #note
+              </span>
+
+              <span className="tag">
+                #coolnote
+              </span>
+
+              <span className="tag">
+                #thisisanote
+              </span>
+
+              <button className="new-tag-button">+</button>
+            </div>
+          </div>
         </div>
       </div>
     );
