@@ -2,7 +2,7 @@
 
 var editor = {};
 
-var Editor = React.createClass({
+var NoteEditor = React.createClass({
   componentDidMount: function() {
     editor = new Quill('#editor');
     editor.addModule('toolbar', {

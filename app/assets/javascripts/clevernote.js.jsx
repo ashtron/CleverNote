@@ -1,5 +1,5 @@
 /* globals React, ReactRouter, NoteForm, Sidebar, NotesList */
-/* globals NotebooksPage, NewNotes, Editor, Navbar, NotesPage */
+/* globals NotebooksPage, NewNotes, NoteEditor, Navbar, NotesPage */
 
 $(function() {
   var root = document.getElementById('content');
@@ -22,7 +22,7 @@ $(function() {
       <Route path="/" component={App}>
         <Route path="notes" component={NotesPage}/>
         <Route path="notebooks" component={NotebooksPage}/>
-        <Route path="notes/new" component={Editor}/>
+        <Route path="notes/new" component={NoteEditor}/>
       </Route>
   );
 

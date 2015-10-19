@@ -5,7 +5,7 @@ var NotebooksPage = React.createClass({
     return (
       <div>
         <NotebooksList/>
-        <Editor/>
+        <NotebookEditor/>
       </div>
     );
   }
