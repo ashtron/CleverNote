@@ -13,3 +13,5 @@ User.create(username: "James", password: "jamesjames")
 Note.create(title: "Bill's Note", body: '{"ops":[{"insert":"I\'m Bill\n\n"}]}', author_id: 1, notebook_id: 1)
 Note.create(title: "Jane's Note", body: '{"ops":[{"insert":"I\'m Jane\n\n"}]}', author_id: 2, notebook_id: 2)
 Note.create(title: "James' Note", body: '{"ops":[{"insert":"I\'m James\n\n"}]}', author_id: 3, notebook_id: 3)
+
+Notebook.create(title: "Bill's Notebook", description: "This is Bill's notebook.", author_id: 1)

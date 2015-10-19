@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  has_many :notes
+  has_many :notes,
+    class_name: "Note",
+    foreign_key: :id
+
+  has_many :notebooks,
+    class_name: "Notebook",
+    foreign_key: :id
 
   after_initialize :ensure_session_token
 
