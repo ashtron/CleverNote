@@ -1,17 +1,17 @@
-/* globals React, NoteStore, NoteListItem, ApiUtil */
+/* globals React, NoteStore, NoteListItem, ApiUtil, NotebookStore */
 
 var NotesList = React.createClass({
   _onChange: function() {
-    this.setState({ notes: NoteStore.all() });
+    this.setState({ notes: NotebookStore.allNotes() });
   },
 
   getInitialState: function() {
-    return { notes: NoteStore.all() };
+    return { notes: NotebookStore.allNotes() };
   },
 
   componentDidMount: function() {
     ApiUtil.fetchNotes();
-    this.setState({ notes: NoteStore.all() });
+    this.setState({ notes: NotebookStore.allNotes() });
     NoteStore.addChangeListener(this._onChange);
   },
 
@@ -20,7 +20,7 @@ var NotesList = React.createClass({
       <div>
         <div className="notes-list">
           <div className="notes-list-header">Notes
-            <span className="note-count">{NoteStore.all().length + " notes"}</span>
+            <span className="note-count">{this.state.notes.length + " notes"}</span>
           </div>
           <ul className="list-group">
             {

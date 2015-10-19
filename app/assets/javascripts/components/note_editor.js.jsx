@@ -1,4 +1,4 @@
-/* globals React, Quill, NoteStore, ApiUtil, ApiActions */
+/* globals React, Quill, NoteStore, ApiUtil, ApiActions, NotebookStore */
 
 var editor = {};
 
@@ -61,6 +61,7 @@ var NoteEditor = React.createClass({
     var selectedNote = NoteStore.selectedNote();
 
     if ($.isEmptyObject(selectedNote)) {
+      note.notebook_id = NotebookStore.selectedNotebook().id;
       ApiUtil.createNote(note);
     } else {
       note = $.extend(selectedNote, note);

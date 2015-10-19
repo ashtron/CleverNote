@@ -1,14 +1,16 @@
 /* globals React, NotebooksList, NotesList, NotebookEditor, NotebookStore */
 /* globals NoteEditor */
 
-var NotebooksPage = React.createClass({
+var Homepage = React.createClass({
   getInitialState: function() {
-    return { list: <NotebooksList/>, editor: <NotebookEditor/> };
+    return { list: "", editor: "" };
   },
 
   _onChange: function() {
-    if ($.isEmptyObject(NotebookStore.selectedNotebook())) {
-      this.setState({ list: <NotebooksList/>, editor: <NotebookEditor/> });
+    var notebookSelected = $.isEmptyObject(NotebookStore.selectedNotebook());
+
+    if (notebookSelected) {
+      this.setState({ list: <NotebooksList/>, editor: "" });
     } else {
       this.setState({ list: <NotesList/>, editor: <NoteEditor/> });
     }

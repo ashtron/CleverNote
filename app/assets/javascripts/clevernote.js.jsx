@@ -1,5 +1,6 @@
 /* globals React, ReactRouter, NoteForm, Sidebar, NotesList */
 /* globals NotebooksPage, NewNotes, NoteEditor, Navbar, NotesPage */
+/* globals Homepage, NewNotebookPage */
 
 $(function() {
   var root = document.getElementById('content');
@@ -20,9 +21,9 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
+        <Route path="home" component={Homepage}/>
         <Route path="notes" component={NotesPage}/>
-        <Route path="notebooks" component={NotebooksPage}/>
-        <Route path="notes/new" component={NoteEditor}/>
+        <Route path="notebooks/new" component={NewNotebookPage}/>
       </Route>
   );
 

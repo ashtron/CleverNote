@@ -2,6 +2,7 @@
 
 var Navbar = React.createClass({
   onNotebooksClick: function() {
+    NoteStore.deselect();
     NotebookStore.deselect();
   },
 
@@ -29,7 +30,7 @@ var Navbar = React.createClass({
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li onClick={this.onNotebooksClick}><a href="#/notebooks">Notebooks</a></li>
+              <li onClick={this.onNotebooksClick}><a href="#/home">Notebooks</a></li>
               <li onClick={this.onCreateNoteClick}><a href="#/notes/new">Create Note</a></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>

@@ -1,4 +1,5 @@
 /* globals EventEmitter, AppDispatcher, NotebookStore, NotebookConstants */
+/* globals NoteStore */
 
 (function(root){
   var CHANGE_EVENT = "change";
@@ -8,6 +9,14 @@
   root.NotebookStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       return _notebooks.slice(0);
+    },
+
+    allNotes: function() {
+      var notes = NoteStore.all().filter(function(note) {
+        return note.notebook_id === _selectedNotebook.id;
+      });
+
+      return notes.slice(0);
     },
 
     add: function(notebook) {
