@@ -30,6 +30,7 @@
     addChangeListener: function(callback){
       this.addListener(CHANGE_EVENT, callback);
     },
+
     removeChangeListener: function(callback){
       this.removeListener(CHANGE_EVENT, callback);
     },

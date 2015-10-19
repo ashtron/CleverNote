@@ -1,4 +1,5 @@
 /* globals React, Quill, NoteStore, ApiUtil, ApiActions, NotebookStore */
+/* globals TagStore */
 
 var editor = {};
 
@@ -19,9 +20,12 @@ var NoteEditor = React.createClass({
     this.refs.titleInput.getDOMNode().focus();
 
     NoteStore.addChangeListener(this._onChange);
+    TagStore.addChangeListener(this._onChange);
   },
 
   _onChange: function() {
+    ApiUtil.fetchTags(NoteStore.selectedNote().id);
+
     var title = NoteStore.selectedNote().title;
     var body = NoteStore.selectedNote().body;
 
@@ -50,6 +54,14 @@ var NoteEditor = React.createClass({
     NoteStore.deselect();
     editor.setText("");
     this.refs.titleInput.getDOMNode().focus();
+  },
+
+  onNewTagClick: function(event) {
+    var note_id = NoteStore.selectedNote().id;
+    var name = prompt("name");
+    var tag = { name: name };
+
+    ApiUtil.createTag(tag, note_id);
   },
 
   submit: function(event) {
@@ -143,19 +155,17 @@ var NoteEditor = React.createClass({
 
           <div className="tag-list-container">
             <div className="tag-list">
-              <span className="tag">
-                #note
-              </span>
+              {
+                TagStore.all().map(function(tag) {
+                  return (
+                    <span className="tag">
+                      #{tag.name}
+                    </span>
+                  );
+                })
+              }
 
-              <span className="tag">
-                #coolnote
-              </span>
-
-              <span className="tag">
-                #thisisanote
-              </span>
-
-              <button className="new-tag-button">+</button>
+              <button className="new-tag-button" onClick={this.onNewTagClick}>+</button>
             </div>
           </div>
         </div>
