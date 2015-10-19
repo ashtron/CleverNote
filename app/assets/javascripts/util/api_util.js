@@ -6,7 +6,7 @@ var ApiUtil = {
       type: "GET",
       url: "/api/notes",
       success: function(notes) {
-        ApiActions.receiveAll(notes);
+        ApiActions.receiveAllNotes(notes);
       }
     });
   },
@@ -40,6 +40,49 @@ var ApiUtil = {
       data: { note: note },
       success: function(notes) {
         ApiActions.deleteNote(notes);
+      }
+    });
+  },
+
+  fetchNotebooks: function() {
+    $.ajax({
+      type: "GET",
+      url: "/api/notebooks",
+      success: function(notebooks) {
+        ApiActions.receiveAllNotebooks(notebooks);
+      }
+    });
+  },
+
+  createNotebook: function(notebook) {
+    $.ajax({
+      type: "POST",
+      url: "/api/notebooks",
+      data: { notebook: notebook },
+      success: function(notebook) {
+        ApiActions.addNotebook(notebook);
+      }
+    });
+  },
+
+  updateNotebook: function(notebook) {
+    $.ajax({
+      type: "PATCH",
+      url: "api/notebooks/" + notebook.id,
+      data: { notebook: notebook },
+      success: function(notebooks) {
+        ApiActions.updateNotebook(notebooks);
+      }
+    });
+  },
+
+  deleteNotebook: function(notebook) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/notebooks/" + notebook.id,
+      data: { notebook: notebook },
+      success: function(notebooks) {
+        ApiActions.deleteNotebook(notebooks);
       }
     });
   },

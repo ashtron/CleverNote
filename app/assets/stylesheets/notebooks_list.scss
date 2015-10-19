@@ -1,0 +1,36 @@
+.notebooks-list > .selected {
+	border-top: 1px solid grey;
+	border-bottom: 2px solid grey;
+	border-left: 2px solid grey;
+	border-right: 2px solid grey;
+	background-color: #D1ECFF;
+}
+
+.notebooks-list {
+	overflow-y: scroll;
+	float: left;
+	width: 350px;
+	height: 1000px;
+	background-color: #FAFAFA;
+}
+
+.notebooks-list-header {
+  padding-top: 14px;
+  padding-left: 14px;
+	height: 50px;
+  font-size: 24px;
+  background-color: #FAFAFA;
+}
+
+.list-group-item:hover {
+  background-color: #D1ECFF;
+  transition: background-color 200ms;
+}
+
+.notebook-count {
+	color: #C5C5C5;
+	float: right;
+	padding-top: 8px;
+  padding-right: 12px;
+	font-size: 16px;
+}

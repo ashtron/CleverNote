@@ -1,7 +1,6 @@
 class Api::NotesController < ApplicationController
   def index
-    notes = Note.all.select { |note| note.author_id == current_user.id }
-    render json: notes
+    render json: current_user.notes
   end
 
   def create
@@ -16,21 +15,21 @@ class Api::NotesController < ApplicationController
   def update
     note = Note.find(note_params[:id])
     note.update(note_params)
-    notes = Note.all.select { |note| note.author_id == current_user.id }
-    render json: notes
+
+    render json: current_user.notes
   end
 
   def destroy
     note = Note.find(note_params[:id])
     note.destroy
-    notes = Note.all.select { |note| note.author_id == current_user.id }
-    render json: notes
+
+    render json: current_user.notes
   end
 
   private
 
   def note_params
     # Get IDs differently.
-    params.require(:note).permit(:id, :title, :body, :author_id, :notebook_id)
+    params.require(:note).permit(:id, :title, :body, :notebook_id)
   end
 end

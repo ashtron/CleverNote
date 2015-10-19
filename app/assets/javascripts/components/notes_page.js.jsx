@@ -1,4 +1,4 @@
-/* globals React */
+/* globals React, NotesList, Editor */
 
 var NotesPage = React.createClass({
   render: function() {
