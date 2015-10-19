@@ -7,7 +7,6 @@
 
   root.NotebookStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      debugger;
       return _notebooks.slice(0);
     },
 

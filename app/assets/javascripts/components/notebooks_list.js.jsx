@@ -10,7 +10,7 @@ var NotebooksList = React.createClass({
   },
 
   componentDidMount: function() {
-    ApiUtil.fetchNotes();
+    ApiUtil.fetchNotebooks();
     this.setState({ notebooks: NotebookStore.all() });
     NotebookStore.addChangeListener(this._onChange);
   },
