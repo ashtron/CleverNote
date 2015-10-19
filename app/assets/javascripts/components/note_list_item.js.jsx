@@ -31,6 +31,7 @@ var NoteListItem = React.createClass({
     });
 
     ApiUtil.deleteNote(selectedNote[0]);
+    debugger;
   },
 
   render: function() {

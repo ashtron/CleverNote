@@ -101,7 +101,7 @@ var NoteEditor = React.createClass({
             </span>
 
             <span className="ql-format-group">
-        			<select title="Text Alignment" className="ql-align" >
+        			<select title="Text Alignment" className="ql-align">
         				<option value="left" label="Left" defaultValue=""></option>
         				<option value="center" label="Center"></option>
         				<option value="right" label="Right"></option>
