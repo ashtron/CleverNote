@@ -1,6 +1,6 @@
 /* globals EventEmitter, AppDispatcher, NoteStore, NoteConstants */
 
-(function(root){
+(function(root) {
   var CHANGE_EVENT = "change";
   var _notes = [];
   var _selectedNote = {};

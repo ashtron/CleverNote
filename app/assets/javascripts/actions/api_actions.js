@@ -1,4 +1,4 @@
-/* globals AppDispatcher, NoteConstants, NotebookConstants */
+/* globals AppDispatcher, NoteConstants, NotebookConstants, TagConstants */
 
 var ApiActions = {
   receiveAllNotes: function(notes) {
@@ -72,6 +72,34 @@ var ApiActions = {
     AppDispatcher.dispatch({
       actionType: NotebookConstants.NOTEBOOK_DELETED,
       notebooks: notebooks
+    });
+  },
+
+  receiveAllTags: function(tags) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAGS_RECEIVED,
+      tags: tags
+    });
+  },
+
+  addTag: function(tag) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAG_CREATED,
+      tag: tag
+    });
+  },
+
+  updateTag: function(tags) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAG_UPDATED,
+      tag: tags
+    });
+  },
+
+  deleteTag: function(tags) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAG_DELETED,
+      tag: tags
     });
   }
 };

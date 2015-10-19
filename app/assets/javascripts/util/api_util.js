@@ -87,6 +87,50 @@ var ApiUtil = {
     });
   },
 
+  fetchTags: function(note_id) {
+    $.ajax({
+      type: "GET",
+      url: "api/tags",
+      data: { note_id: note_id },
+      success: function(tags) {
+        ApiActions.receiveAllTags(tags);
+      }
+    });
+  },
+
+  createTag: function(tag, note_id) {
+    $.ajax({
+      type: "POST",
+      url: "api/tags",
+      data: { tag: tag, note_id: note_id },
+      success: function(tag) {
+        ApiActions.addTag(tag);
+      }
+    })
+  },
+
+  updateTag: function(tag, note_id) {
+    $.ajax({
+      type: "PATCH",
+      url: "api/tags/" + tag.id,
+      data: { tag: tag, note_id: note_id },
+      success: function(tags) {
+        ApiActions.updateTag(tags);
+      }
+    });
+  },
+
+  deleteTag: function(tag, note_id) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/tags/" + tag.id,
+      data: { tag: tag, note_id: note_id },
+      success: function(tags) {
+        ApiActions.deleteTag(tags);
+      }
+    });
+  },
+
   signOutUser: function() {
     $.ajax({
       type: "DELETE",
