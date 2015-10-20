@@ -44,10 +44,9 @@ var NoteEditor = React.createClass({
     if (!$.isEmptyObject(selectedNote)) {
       // debugger;
       editor.setContents(JSON.parse(selectedNote.body));
-    } else {
-      // debugger;
-      // editor.setContents();
-    }
+    } //else {
+    //   editor.setContents({"ops":[{"insert":""}]});
+    // }
   },
 
   _titleChange: function(event) {
