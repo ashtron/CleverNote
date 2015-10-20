@@ -170,7 +170,7 @@ var NoteEditor = React.createClass({
               {
                 TagStore.all().map(function(tag) {
                   return (
-                    <span className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
+                    <span key={tag.id} className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
                       #{tag.name}
                     </span>
                   );
