@@ -7,7 +7,11 @@
 
   root.TagStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      return _tags.slice(0);
+      if (typeof _tags === "undefined") {
+        return [];
+      } else {
+        return _tags.slice(0);
+      }
     },
 
     add: function(tag) {

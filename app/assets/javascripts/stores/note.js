@@ -7,7 +7,11 @@
 
   root.NoteStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      return _notes.slice(0);
+      if (typeof _notes === "undefined") {
+        return [];
+      } else {
+        return _notes.slice(0);
+      }
     },
 
     add: function(note) {

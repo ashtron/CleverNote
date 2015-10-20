@@ -23,6 +23,8 @@ var NoteListItem = React.createClass({
   },
 
   deleteClick: function(event) {
+    event.stopPropagation();
+
     var title = this.props.title;
     var body = this.props.body;
     var note = { title: title, body: body };
@@ -32,6 +34,7 @@ var NoteListItem = React.createClass({
     });
 
     ApiUtil.deleteNote(selectedNote[0]);
+    NoteStore.deselect();
   },
 
   render: function() {

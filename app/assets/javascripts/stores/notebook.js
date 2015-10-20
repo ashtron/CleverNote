@@ -8,7 +8,11 @@
 
   root.NotebookStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      return _notebooks.slice(0);
+      if (typeof _notebooks === "undefined") {
+        return [];
+      } else {
+        return _notebooks.slice(0);
+      }
     },
 
     allNotes: function() {
