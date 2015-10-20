@@ -65,7 +65,7 @@ var NoteEditor = React.createClass({
   onCreateClick: function() {
     TagStore.resetTags([]);
     NoteStore.deselect();
-    editor.setText("");
+    editor.setContents({"ops":[{"insert":""}]});
     this.refs.titleInput.getDOMNode().focus();
   },
 
