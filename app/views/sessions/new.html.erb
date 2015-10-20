@@ -6,13 +6,14 @@
       value="<%= form_authenticity_token %>">
 
     <label for="user_username" class="sr-only">Username</label>
-    <input type="username" name="user[username]" id="user_username" class="form-control" placeholder="Username" required="" autofocus="">
+    <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
 
     <label for="user_password" class="sr-only">Password</label>
-    <input type="password" name="user[password]" id="user_password" class="form-control" placeholder="Password" required="">
+    <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
 
-    <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-    <button id="sign-up-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    <!-- <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+    <button id="sign-up-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button> -->
+    <button id="guest-sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Guest Sign In</button>
   </form>
 </div>
 

@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: "James", password: "jamesjames")
+User.create(username: "guest", password: "password")
 
-Notebook.create(title: "The American West", description: '{"ops":[{"insert":"States in the American West."}]}', author_id: 1)
+Notebook.create(title: "The West", description: '{"ops":[{"insert":"States in the American West."}]}', author_id: 1)
 
 wyoming_body = "{\"ops\":[{\"attributes\":{\"link\":\"http://www.wyomingtourism.org/\",\"bold\":true,\"color\":\"rgb(37, 37, 37)\"},\"insert\":\"Wyoming\"},{\"insert\":\" is a state in the \"},{\"attributes\":{\"color\":\"rgb(11, 0, 128)\",\"link\":\"https://en.wikivoyage.org/wiki/Rocky_Mountains_(United_States_of_America)\"},\"insert\":\"Rocky Mountain\"},{\"insert\":\" region of the \"},{\"attributes\":{\"color\":\"rgb(11, 0, 128)\",\"link\":\"https://en.wikivoyage.org/wiki/United_States_of_America\"},\"insert\":\"United States of America\"},{\"insert\":\".\\n\\nWyoming is a great place to discover the American West. With many unspoiled mountain vistas, vast blue skies and the awe-inspiring scenery of the high plains and Rocky Mountains, Wyoming offers much of what travelers to this region seek. Unlike other states in the Rockies, Wyoming's demographic growth has been restricted to a few areas of the state where mineral extraction has expanded in the recent past. While mining and drilling have expanded recently (and very notably in some regions), Wyoming is still relatively unspoiled compared to other parts of the region.\\n\\n\"},{\"attributes\":{\"image\":\"http://www.travisnovitsky.com/Beyond-Minnesota/Wyoming/i-w4t934b/0/XL/WYOMING%207388-XL.jpg\"},\"insert\":1},{\"insert\":\"\\n\"}]}"
 Note.create(title: "Wyoming", body: wyoming_body, author_id: 1, notebook_id: 1)
@@ -20,7 +20,7 @@ colorado_body = "{\"ops\":[{\"attributes\":{\"link\":\"http://www.colorado.com/\
 Note.create(title: "Colorado", body: colorado_body, author_id: 1, notebook_id: 1)
 
 utah_body = "{\"ops\":[{\"attributes\":{\"bold\":true,\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\",\"link\":\"http://www.utah.com/\"},\"insert\":\"Utah\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\", located in the \"},{\"attributes\":{\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\",\"link\":\"https://en.wikivoyage.org/wiki/Southwest_(United_States_of_America)\"},\"insert\":\"Southwest\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\" region of the \"},{\"attributes\":{\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\",\"link\":\"https://en.wikivoyage.org/wiki/United_States\"},\"insert\":\"United States\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\", is well known for its incredible scenic beauty and year round outdoor activities including skiing, snowboarding, hiking, boating, water skiing, horseback riding, camping, and rock climbing. The capital city of \"},{\"attributes\":{\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\",\"link\":\"https://en.wikivoyage.org/wiki/Salt_Lake_City\"},\"insert\":\"Salt Lake City\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\" has a number of unique modern and historical sites to visit, including Temple Square, the headquarters for the Mormon church.\"},{\"insert\":\"\\n\\n\"},{\"attributes\":{\"image\":\"http://www.jimshoemakerphotography.com/data/photos/12_1arches50.jpg\"},\"insert\":1},{\"insert\":\"\\n\"}]}"
-Note.create(title: "Nevada", body: utah_body, author_id: 1, notebook_id: 1)
+Note.create(title: "Utah", body: utah_body, author_id: 1, notebook_id: 1)
 
 Notebook.create(title: "New England", description: '{"ops":[{"insert":"States in New England."}]}', author_id: 1)
 
