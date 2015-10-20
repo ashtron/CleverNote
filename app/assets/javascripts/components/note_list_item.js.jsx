@@ -2,6 +2,8 @@
 
 var NoteListItem = React.createClass({
   noteClick: function(event) {
+    TagStore.resetTags([]);
+
     $("li").removeClass("selected");
     $(event.target).addClass("selected");
 

@@ -63,6 +63,7 @@ var NoteEditor = React.createClass({
   },
 
   onCreateClick: function() {
+    TagStore.resetTags([]);
     NoteStore.deselect();
     editor.setText("");
     this.refs.titleInput.getDOMNode().focus();
@@ -148,8 +149,7 @@ var NoteEditor = React.createClass({
             </span>
 
         		<span className="ql-format-group">
-              <span title="Link" className="ql-format-button ql-link">
-              </span>
+              <span title="Link" className="ql-format-button ql-link"></span>
               <span title="image" className="ql-format-button ql-image"></span>
             </span>
 
