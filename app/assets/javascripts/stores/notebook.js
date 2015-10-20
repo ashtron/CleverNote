@@ -8,11 +8,7 @@
 
   root.NotebookStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      if (typeof _notebooks === "undefined") {
-        return [];
-      } else {
-        return _notebooks.slice(0);
-      }
+      return _notebooks.slice(0);
     },
 
     allNotes: function() {
@@ -69,7 +65,6 @@
           NotebookStore.emit(CHANGE_EVENT);
           break;
         case NotebookConstants.NOTEBOOK_UPDATED:
-          ApiUtil.fetchNotebooks();
           NotebookStore.resetNotebooks(payload.notebooks);
           NotebookStore.emit(CHANGE_EVENT);
           break;

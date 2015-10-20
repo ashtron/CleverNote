@@ -64,7 +64,7 @@ var ApiActions = {
   updateNotebook: function(notebooks) {
     AppDispatcher.dispatch({
       actionType: NotebookConstants.NOTEBOOK_UPDATED,
-      note: notebooks
+      notebooks: notebooks
     });
   },
 
@@ -92,14 +92,14 @@ var ApiActions = {
   updateTag: function(tags) {
     AppDispatcher.dispatch({
       actionType: TagConstants.TAG_UPDATED,
-      tag: tags
+      tags: tags
     });
   },
 
   deleteTag: function(tags) {
     AppDispatcher.dispatch({
       actionType: TagConstants.TAG_DELETED,
-      tag: tags
+      tags: tags
     });
   }
 };
