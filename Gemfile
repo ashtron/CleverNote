@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'react-rails', '1.3.0'
+
 gem 'flux-rails-assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
