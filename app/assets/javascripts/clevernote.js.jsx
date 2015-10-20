@@ -13,6 +13,7 @@ $(function() {
       return (
           <div>
             <Navbar/>
+            <Homepage/>
             {this.props.children}
           </div>
       );
