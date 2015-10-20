@@ -27,7 +27,7 @@ var ApiActions = {
   updateNote: function(notes) {
     AppDispatcher.dispatch({
       actionType: NoteConstants.NOTE_UPDATED,
-      note: notes
+      notes: notes
     });
   },
 

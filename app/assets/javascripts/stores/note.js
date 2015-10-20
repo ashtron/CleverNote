@@ -7,11 +7,7 @@
 
   root.NoteStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      if (typeof _notes === "undefined") {
-        return [];
-      } else {
-        return _notes.slice(0);
-      }
+      return _notes.slice(0);
     },
 
     add: function(note) {
@@ -40,11 +36,7 @@
     },
 
     resetNotes: function(notes) {
-      // Find out why notes is sometimes undefined.
-
-      if (typeof notes !== "undefined") {
-        _notes = notes;
-      }
+      _notes = notes;
     },
 
     dispatcherID: AppDispatcher.register(function(payload) {
@@ -63,7 +55,6 @@
           NoteStore.emit(CHANGE_EVENT);
           break;
         case NoteConstants.NOTE_UPDATED:
-          ApiUtil.fetchNotes();
           NoteStore.resetNotes(payload.notes);
           NoteStore.emit(CHANGE_EVENT);
           break;
