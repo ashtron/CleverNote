@@ -33,7 +33,10 @@ gem 'pry-rails'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'puma'
+
+group :production do
+  gem 'puma'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
