@@ -62,6 +62,18 @@ var NoteEditor = React.createClass({
     ApiUtil.createTag(tag, note_id);
   },
 
+  onTagDeleteClick: function(event) {
+    var name = event.target.textContent.slice(1);
+    var note_id = NoteStore.selectedNote().id;
+
+    var tag = TagStore.all().filter(function(tag) {
+      return tag.name === name;
+    });
+
+    ApiUtil.deleteTag(tag, note_id);
+    ApiUtil.fetchTags(note_id);
+  },
+
   submit: function(event) {
     event.preventDefault();
 
@@ -81,6 +93,8 @@ var NoteEditor = React.createClass({
   },
 
   render: function() {
+    var that = this;
+
     return (
       <div className="quill-wrapper">
         <div className="toolbar-container">
@@ -156,7 +170,7 @@ var NoteEditor = React.createClass({
               {
                 TagStore.all().map(function(tag) {
                   return (
-                    <span className="tag">
+                    <span className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
                       #{tag.name}
                     </span>
                   );

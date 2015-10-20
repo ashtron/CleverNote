@@ -24,7 +24,7 @@ class Api::TagsController < ApplicationController
   def destroy
     note = Note.find(params[:note_id])
 
-    tag = Tag.find(tag.id)
+    tag = Tag.find(params[:tag]["0"][:id])
     tag.destroy
 
     render json: note.tags

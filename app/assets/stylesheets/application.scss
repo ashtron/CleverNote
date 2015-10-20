@@ -70,3 +70,12 @@ time, mark, audio, video {
 .tag {
   margin: 3%;
 }
+
+.tag:hover {
+  font-size: 0;
+}
+
+.tag:hover:before {
+  content: attr(data-hover);
+  font-size: 19px;
+}
