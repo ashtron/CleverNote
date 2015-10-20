@@ -5,9 +5,14 @@ var editor = {};
 
 var NoteEditor = React.createClass({
   componentDidMount: function() {
-    editor = new Quill('#editor');
-    editor.addModule('toolbar', {
-      container: '#toolbar'
+    editor = new Quill('#editor', {
+      modules: {
+        'toolbar': { container: '#toolbar' },
+        'image-tooltip': true,
+        'link-tooltip': true
+      },
+
+      theme: 'snow'
     });
 
     var ed = this;
@@ -37,7 +42,11 @@ var NoteEditor = React.createClass({
     var selectedNote = NoteStore.selectedNote();
 
     if (!$.isEmptyObject(selectedNote)) {
+      // debugger;
       editor.setContents(JSON.parse(selectedNote.body));
+    } else {
+      // debugger;
+      // editor.setContents();
     }
   },
 
@@ -141,6 +150,7 @@ var NoteEditor = React.createClass({
         		<span className="ql-format-group">
               <span title="Link" className="ql-format-button ql-link">
               </span>
+              <span title="image" className="ql-format-button ql-image"></span>
             </span>
 
             <span className="ql-format-group">
