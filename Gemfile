@@ -32,7 +32,10 @@ gem 'annotate'
 gem 'pry-rails'
 
 gem 'bootstrap-sass'
+
 gem 'autoprefixer-rails'
+
+gem 'rails_12factor'
 
 group :production do
   gem 'puma'
