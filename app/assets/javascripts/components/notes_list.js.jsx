@@ -1,4 +1,5 @@
 /* globals React, NoteStore, NoteListItem, ApiUtil, NotebookStore */
+/* globals NotebooksButton */
 
 var NotesList = React.createClass({
   _onChange: function() {
@@ -44,6 +45,7 @@ var NotesList = React.createClass({
               })
             }
             </ul>
+            <NotebooksButton/>
         </div>
       </div>
     );

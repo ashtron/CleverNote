@@ -3,13 +3,13 @@
 
 var Homepage = React.createClass({
   getInitialState: function() {
-    return { list: "", editor: "" };
+    return { list: <NotebooksList/>, editor: "" };
   },
 
   _onChange: function() {
-    var notebookSelected = $.isEmptyObject(NotebookStore.selectedNotebook());
+    var notebookSelected = !$.isEmptyObject(NotebookStore.selectedNotebook());
 
-    if (notebookSelected) {
+    if (!notebookSelected) {
       this.setState({ list: <NotebooksList/>, editor: "" });
     } else {
       this.setState({ list: <NotesList/>, editor: <NoteEditor/> });
