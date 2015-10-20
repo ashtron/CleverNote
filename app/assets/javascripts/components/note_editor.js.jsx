@@ -23,6 +23,11 @@ var NoteEditor = React.createClass({
     TagStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NoteStore.removeChangeListener(this._onChange);
+    TagStore.removeChangeListener(this._onChange);
+  },
+
   _onChange: function() {
     var title = NoteStore.selectedNote().title;
     var body = NoteStore.selectedNote().body;

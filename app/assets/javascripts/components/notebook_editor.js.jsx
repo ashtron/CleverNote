@@ -21,6 +21,10 @@ var NotebookEditor = React.createClass({
     NotebookStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NotebookStore.removeChangeListener(this._onChange);
+  },
+
   _onChange: function() {
     var title = NotebookStore.selectedNotebook().title;
     var description = NotebookStore.selectedNotebook().description;

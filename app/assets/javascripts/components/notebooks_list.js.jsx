@@ -15,6 +15,10 @@ var NotebooksList = React.createClass({
     NotebookStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NotebookStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     var notebookCount = "";
     var notebooksLength = this.state.notebooks.length;

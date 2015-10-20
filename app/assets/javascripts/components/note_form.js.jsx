@@ -24,6 +24,10 @@ var NoteForm = React.createClass({
     NoteStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NoteStore.removeChangeListener(this._onChange);
+  },
+
   submit: function(event) {
     event.preventDefault();
 

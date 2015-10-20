@@ -20,6 +20,10 @@ var Homepage = React.createClass({
     NotebookStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NotebookStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     return (
       <div>

@@ -16,6 +16,10 @@ var NotesList = React.createClass({
     NoteStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    NoteStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     var noteCount = "";
     var notesLength = this.state.notes.length;
