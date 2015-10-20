@@ -38,44 +38,14 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-.group:after {
-  clear: both;
-  content: "";
-  display: block;
-}
+// .group:after {
+//   clear: both;
+//   content: "";
+//   display: block;
+// }
 
 // body {
 //   font-family: "Times New Roman", Times, serif;
 //   background: url(http://lorempixel.com/1024/768/);
 //   background-size: 100% auto;
 // }
-
-.note-form {
-  float: left;
-}
-
-.tag-list-container {
-  float: left;
-  width: 65%;
-}
-
-.tag-list {
-  width: 135%;
-  color: #777;
-  margin-left: 10%;
-  margin-top: 2%;
-  font-size: 19px;
-}
-
-.tag {
-  margin: 3%;
-}
-
-.tag:hover {
-  font-size: 0;
-}
-
-.tag:hover:before {
-  content: attr(data-hover);
-  font-size: 19px;
-}

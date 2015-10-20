@@ -1,0 +1,25 @@
+.tag-list-container {
+  float: left;
+  width: 65%;
+}
+
+.tag-list {
+  width: 135%;
+  color: #777;
+  margin-left: 10%;
+  margin-top: 2%;
+  font-size: 19px;
+}
+
+.tag {
+  margin: 3%;
+}
+
+.tag:hover:before {
+  content: attr(data-hover);
+  font-size: 19px;
+}
+
+.tag:hover {
+  font-size: 0;
+}
