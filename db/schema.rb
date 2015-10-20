@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151019214814) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "notebooks", force: :cascade do |t|
     t.integer  "author_id",   null: false
     t.string   "title",       null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151019214814) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "notebooks", ["author_id"], name: "index_notebooks_on_author_id"
+  add_index "notebooks", ["author_id"], name: "index_notebooks_on_author_id", using: :btree
 
   create_table "notes", force: :cascade do |t|
     t.string   "title",                       null: false
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 20151019214814) do
     t.boolean  "archived",    default: false
   end
 
-  add_index "notes", ["author_id"], name: "index_notes_on_author_id"
-  add_index "notes", ["notebook_id"], name: "index_notes_on_notebook_id"
+  add_index "notes", ["author_id"], name: "index_notes_on_author_id", using: :btree
+  add_index "notes", ["notebook_id"], name: "index_notes_on_notebook_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "note_id",    null: false
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 20151019214814) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "taggings", ["note_id"], name: "index_taggings_on_note_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["note_id"], name: "index_taggings_on_note_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",       null: false
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151019214814) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
