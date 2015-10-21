@@ -1,6 +1,8 @@
-/* globals React, NoteStore, ApiUtil, NotebookStore */
+/* globals React, NoteStore, ApiUtil, NotebookStore, ReactRouter */
 
 var Navbar = React.createClass({
+  mixins: [ReactRouter.History],
+
   onNotebooksClick: function() {
     // NoteStore.deselect();
     // NotebookStore.deselect();

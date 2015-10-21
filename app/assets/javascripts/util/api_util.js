@@ -136,6 +136,7 @@ var ApiUtil = {
       type: "DELETE",
       url: "session",
       success: function() {
+        window.location.href = '/session/new';
       }
     });
   }
