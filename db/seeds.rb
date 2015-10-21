@@ -35,3 +35,43 @@ Note.create(title: "New Hampshire", body: new_hampshire_body, author_id: 1, note
 
 rhode_island_body = "{\"ops\":[{\"attributes\":{\"bold\":true,\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\",\"link\":\"http://www.visitrhodeisland.com/\"},\"insert\":\"Rhode Island\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\" is the smallest state in the \"},{\"attributes\":{\"link\":\"https://en.wikivoyage.org/wiki/United_States_of_America\",\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\"United States of America\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\", tucked between \"},{\"attributes\":{\"link\":\"https://en.wikivoyage.org/wiki/Massachusetts\",\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\"Massachusetts\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\" and \"},{\"attributes\":{\"link\":\"https://en.wikivoyage.org/wiki/Connecticut\",\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\"Connecticut\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\" in \"},{\"attributes\":{\"link\":\"https://en.wikivoyage.org/wiki/New_England\",\"color\":\"rgb(11, 0, 128)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\"New England\"},{\"attributes\":{\"color\":\"rgb(37, 37, 37)\",\"font\":\"sans-serif\",\"size\":\"14px\"},\"insert\":\". Nonetheless, it has over 400 miles of coastline, courtesy of Narragansett Bay and islands such as Aquidneck Island, home to Newport, the \\\"City by the Sea.\\\"\"},{\"insert\":\"\\n\\n\"},{\"attributes\":{\"image\":\"http://www.micbla56.dreamhosters.com/blog/wp-content/uploads/2014/12/MAB_20140623_RI_BLOCK_ISLAND_NORTH_LIGHT_SUNSET_8000973.jpg\"},\"insert\":1},{\"insert\":\"\\n\"}]}"
 Note.create(title: "Rhode Island", body: rhode_island_body, author_id: 1, notebook_id: 2)
+
+wyoming_note = Note.all[0]
+wyoming_note.tags.create(name: "wyoming")
+wyoming_note.tags.create(name: "barn")
+wyoming_note.tags.create(name: "mountains")
+
+nevada_note = Note.all[1]
+nevada_note.tags.create(name: "nevada")
+nevada_note.tags.create(name: "road")
+nevada_note.tags.create(name: "sky")
+
+colorado_note = Note.all[2]
+colorado_note.tags.create(name: "colorado")
+colorado_note.tags.create(name: "mountains")
+colorado_note.tags.create(name: "skiing")
+
+utah_note = Note.all[3]
+utah_note.tags.create(name: "utah")
+utah_note.tags.create(name: "desert")
+utah_note.tags.create(name: "clouds")
+
+vermont_note = Note.all[4]
+vermont_note.tags.create(name: "vermont")
+vermont_note.tags.create(name: "lakes")
+vermont_note.tags.create(name: "maplesyrup")
+
+maine_note = Note.all[5]
+maine_note.tags.create(name: "maine")
+maine_note.tags.create(name: "lighthouses")
+maine_note.tags.create(name: "ocean")
+
+new_hampshire_note = Note.all[6]
+new_hampshire_note.tags.create(name: "newhampshire")
+new_hampshire_note.tags.create(name: "whitemountains")
+new_hampshire_note.tags.create(name: "trees")
+
+rhode_island_note = Note.all[7]
+rhode_island_note.tags.create(name: "rhodeisland")
+rhode_island_note.tags.create(name: "beach")
+rhode_island_note.tags.create(name: "lighthouses")
