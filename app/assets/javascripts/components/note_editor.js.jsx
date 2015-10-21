@@ -58,7 +58,7 @@ var NoteEditor = React.createClass({
   },
 
   getInitialState: function() {
-    return ({ title: "", body: "" });
+    return ({ title: "", body: "", tagInput: false });
   },
 
   onCreateClick: function() {
@@ -69,11 +69,18 @@ var NoteEditor = React.createClass({
   },
 
   onNewTagClick: function(event) {
-    var note_id = NoteStore.selectedNote().id;
-    var name = prompt("name");
-    var tag = { name: name };
+    // var note_id = NoteStore.selectedNote().id;
+    // var name = prompt("name");
+    // var tag = { name: name };
+    //
+    // ApiUtil.createTag(tag, note_id);
 
-    ApiUtil.createTag(tag, note_id);
+    this.setState({ tagInput: true });
+    this.refs.titleInput.getDOMNode().focus();
+  },
+
+  onTagSubmit: function(event) {
+    debugger;
   },
 
   onTagDeleteClick: function(event) {
@@ -86,6 +93,19 @@ var NoteEditor = React.createClass({
 
     ApiUtil.deleteTag(tag, note_id);
     ApiUtil.fetchTags(note_id);
+  },
+
+  handleKeyDown: function(event) {
+    //Enter keyCode is 13.
+    if (event.keyCode === 13) {
+      var noteId = NoteStore.selectedNote().id;
+      var name = event.target.value;
+      var tag = { name: name };
+
+      ApiUtil.createTag(tag, noteId);
+
+      this.setState({ tagInput: false });
+    }
   },
 
   submit: function(event) {
@@ -108,6 +128,16 @@ var NoteEditor = React.createClass({
 
   render: function() {
     var that = this;
+
+    var tagInput = <button className="new-tag-button" onClick={this.onNewTagClick}>+</button>;
+
+    if (this.state.tagInput) {
+      tagInput = <input
+        onKeyUp={this.handleKeyDown}
+        ref="tagInput"
+        className="tag-input"
+        placeholder="name"></input>;
+    }
 
     return (
       <div className="quill-wrapper">
@@ -191,7 +221,7 @@ var NoteEditor = React.createClass({
                 })
               }
 
-              <button className="new-tag-button" onClick={this.onNewTagClick}>+</button>
+              {tagInput}
             </div>
           </div>
         </div>

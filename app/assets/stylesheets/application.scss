@@ -43,6 +43,16 @@ time, mark, audio, video {
   outline: none;
 }
 
+.tag-input {
+  border: none;
+  outline: none;
+  text-align: right;
+  margin-right: 7px;
+  float: right;
+  font-size: 22px;
+  margin-top: -2px;
+}
+
 // .group:after {
 //   clear: both;
 //   content: "";
