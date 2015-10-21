@@ -19,6 +19,7 @@ var Navbar = React.createClass({
     var selectedNotebook = NotebookStore.selectedNotebook();
 
     ApiUtil.createNotebook(notebook);
+    //Render to notebook list.
   },
 
   onNotebookTitleChange: function(event) {
@@ -66,7 +67,8 @@ var Navbar = React.createClass({
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
 
-            <ul className="nav navbar-nav">
+            <ul className="nav navbar-nav sign-out-nav">
+              <li><a>Guest</a></li>
               <li onClick={this.onSignOutClick}><a href="#">Sign Out</a></li>
             </ul>
 

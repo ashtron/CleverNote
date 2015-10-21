@@ -22,7 +22,12 @@ var NoteEditor = React.createClass({
       ed.setState( { body: body } );
     });
 
-    this.refs.titleInput.getDOMNode().focus();
+    if (this.state.inputTag) {
+      debugger;
+      this.refs.tagInput.getDOMNode().focus();
+    } else {
+      this.refs.titleInput.getDOMNode().focus();
+    }
 
     NoteStore.addChangeListener(this._onChange);
     TagStore.addChangeListener(this._onChange);
@@ -76,7 +81,6 @@ var NoteEditor = React.createClass({
     // ApiUtil.createTag(tag, note_id);
 
     this.setState({ tagInput: true });
-    this.refs.tagInput.getDOMNode().focus();
   },
 
   onTagSubmit: function(event) {
