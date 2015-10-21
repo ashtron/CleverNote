@@ -33,7 +33,7 @@ var NotesList = React.createClass({
     return (
       <div>
         <div className="notes-list">
-          <div className="notes-list-header">Notes
+          <div className="notes-list-header">{NotebookStore.selectedNotebook().title}
             <span className="note-count">{noteCount}</span>
           </div>
           <ul className="list-group">
