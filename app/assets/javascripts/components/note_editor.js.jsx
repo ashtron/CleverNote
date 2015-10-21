@@ -76,7 +76,7 @@ var NoteEditor = React.createClass({
     // ApiUtil.createTag(tag, note_id);
 
     this.setState({ tagInput: true });
-    this.refs.titleInput.getDOMNode().focus();
+    this.refs.tagInput.getDOMNode().focus();
   },
 
   onTagSubmit: function(event) {
@@ -85,14 +85,14 @@ var NoteEditor = React.createClass({
 
   onTagDeleteClick: function(event) {
     var name = event.target.textContent.slice(1);
-    var note_id = NoteStore.selectedNote().id;
+    var noteId = NoteStore.selectedNote().id;
 
     var tag = TagStore.all().filter(function(tag) {
       return tag.name === name;
     });
 
-    ApiUtil.deleteTag(tag, note_id);
-    ApiUtil.fetchTags(note_id);
+    ApiUtil.deleteTag(tag, noteId);
+    ApiUtil.fetchTags(noteId);
   },
 
   handleKeyDown: function(event) {
