@@ -4,7 +4,6 @@ var NewNotebookPage = React.createClass({
   render: function() {
     return (
       <div>
-        <NotebooksList/>
         <NotebookEditor/>
       </div>
     );

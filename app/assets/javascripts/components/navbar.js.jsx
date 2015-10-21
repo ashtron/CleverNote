@@ -10,6 +10,23 @@ var Navbar = React.createClass({
     // NoteStore.deselect();
   },
 
+  onCreateNotebookClick: function(event) {
+    var title = this.state.newNotebookTitle;
+    var description = this.state.newNotebookDescription;
+    var notebook = { title: title, description: description };
+    var selectedNotebook = NotebookStore.selectedNotebook();
+
+    ApiUtil.createNotebook(notebook);
+  },
+
+  onNotebookTitleChange: function(event) {
+    this.setState({ newNotebookTitle: event.target.value });
+  },
+
+  onNotebookDescriptionChange: function(event) {
+    this.setState({ newNotebookDescription: event.target.value });
+  },
+
   onSignOutClick: function() {
     ApiUtil.signOutUser();
   },
@@ -30,25 +47,19 @@ var Navbar = React.createClass({
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li onClick={this.onNotebooksClick}><a href="#">Notebooks</a></li>
-              <li onClick={this.onCreateNoteClick}><a href="#">Create Note</a></li>
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Notebook<span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li><input onChange={this.onNotebookTitleChange} className="new-notebook-dropdown-field" placeholder="Title"></input></li>
+                  <li><input onChange={this.onNotebookDescriptionChange} className="new-notebook-dropdown-field" placeholder="Description"></input></li>
+                  <li><button className="new-notebook-button" onClick={this.onCreateNotebookClick}>Create</button></li>
                 </ul>
               </li>
             </ul>
 
             <form className="navbar-form navbar-left" role="search">
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search"/>
+                <input type="text" className="form-control" placeholder="Doesn't Work Yet"/>
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
             </form>

@@ -1,8 +1,10 @@
-/* globals React, Quill, NotebookStore, ApiUtil, ApiActions */
+/* globals React, Quill, NotebookStore, ApiUtil, ApiActions, ReactRouter */
 
 var editor = {};
 
 var NotebookEditor = React.createClass({
+  mixins: [ReactRouter.History],
+
   componentDidMount: function() {
     editor = new Quill('#editor');
     editor.addModule('toolbar', {
@@ -71,6 +73,8 @@ var NotebookEditor = React.createClass({
       ApiActions.selectNotebook(notebook);
       ApiUtil.updateNotebook(notebook);
     }
+
+    this.history.pushState(null, '/');
   },
 
   render: function() {
