@@ -1,5 +1,5 @@
 /* globals React, Quill, NoteStore, ApiUtil, ApiActions, NotebookStore */
-/* globals TagStore */
+/* globals TagStore, ReactCSSTransitionGroup */
 
 var editor = {};
 
@@ -47,11 +47,8 @@ var NoteEditor = React.createClass({
     var selectedNote = NoteStore.selectedNote();
 
     if (!$.isEmptyObject(selectedNote)) {
-      // debugger;
       editor.setContents(JSON.parse(selectedNote.body));
-    } //else {
-    //   editor.setContents({"ops":[{"insert":""}]});
-    // }
+    }
   },
 
   _titleChange: function(event) {
@@ -74,12 +71,6 @@ var NoteEditor = React.createClass({
   },
 
   onNewTagClick: function(event) {
-    // var note_id = NoteStore.selectedNote().id;
-    // var name = prompt("name");
-    // var tag = { name: name };
-    //
-    // ApiUtil.createTag(tag, note_id);
-
     this.setState({ tagInput: true });
   },
 

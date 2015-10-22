@@ -23,8 +23,6 @@ $(function() {
   var routes = (
       <Route path="/" component={App}>
         <Route path="home" component={Homepage}/>
-        <Route path="notes" component={NotesPage}/>
-        <Route path="notebooks/new" component={NewNotebookPage}/>
       </Route>
   );
 
