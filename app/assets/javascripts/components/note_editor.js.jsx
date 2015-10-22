@@ -74,10 +74,6 @@ var NoteEditor = React.createClass({
     this.setState({ tagInput: true });
   },
 
-  onTagSubmit: function(event) {
-    debugger;
-  },
-
   onTagDeleteClick: function(event) {
     var name = event.target.textContent.slice(1);
     var noteId = NoteStore.selectedNote().id;
@@ -124,20 +120,30 @@ var NoteEditor = React.createClass({
   render: function() {
     var that = this;
 
-    var tagInput = <button className="new-tag-button" onClick={this.onNewTagClick}>+</button>;
+    var tagInput =
+      <button
+        className="new-tag-button"
+        onClick={this.onNewTagClick}>
+        +
+      </button>;
 
     if (this.state.tagInput) {
-      tagInput = <input
+      tagInput =
+      <input
         onKeyUp={this.handleKeyDown}
         ref="tagInput"
         className="tag-input"
-        placeholder="name"></input>;
+        placeholder="name">
+      </input>;
     }
 
     var tags =
       TagStore.all().map(function(tag) {
         return (
-          <span key={tag.id} className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
+          <span key={tag.id}
+            className="tag"
+            data-hover="delete?"
+            onClick={that.onTagDeleteClick}>
             #{tag.name}
           </span>
         );
@@ -157,19 +163,25 @@ var NoteEditor = React.createClass({
         		</span>
 
         		<span className="ql-format-group">
-              <span title="Bold" className="ql-format-button ql-bold"></span>
+              <span title="Bold"
+                className="ql-format-button ql-bold"></span>
               <span className="ql-format-separator"></span>
-              <span title="Italic" className="ql-format-button ql-italic"></span>
+              <span title="Italic"
+                className="ql-format-button ql-italic"></span>
               <span className="ql-format-separator"></span>
-              <span title="Underline" className="ql-format-button ql-underline"></span>
+              <span title="Underline"
+                className="ql-format-button ql-underline"></span>
               <span className="ql-format-separator"></span>
-              <span title="Strikethrough" className="ql-format-button ql-strike"></span>
+              <span title="Strikethrough"
+                className="ql-format-button ql-strike"></span>
             </span>
 
         		<span className="ql-format-group">
-        			<span title="List" className="ql-format-button ql-list"></span>
+        			<span title="List"
+                className="ql-format-button ql-list"></span>
               <span className="ql-format-separator"></span>
-              <span title="Bullet" className="ql-format-button ql-bullet"></span>
+              <span title="Bullet"
+                className="ql-format-button ql-bullet"></span>
             </span>
 
             <span className="ql-format-group">
@@ -187,12 +199,18 @@ var NoteEditor = React.createClass({
             </span>
 
             <span className="ql-format-group">
-              <span onClick={this.onCreateClick} title="New" id="new-button" className="ql-format-button">New
+              <span onClick={this.onCreateClick}
+                title="New" id="new-button"
+                className="ql-format-button">New
               </span>
             </span>
 
             <span className="ql-format-group">
-              <span onClick={this.submit} title="Save" id="save-button" className="ql-format-button">Save
+              <span onClick={this.submit}
+                title="Save"
+                id="save-button"
+                className="ql-format-button">
+                Save
               </span>
             </span>
 
@@ -208,14 +226,18 @@ var NoteEditor = React.createClass({
 
         <div className="editor-container">
         	<div id="editor" className="editor ql-container ql-snow">
-        		<div className="ql-editor authorship" id="ql-editor-2" contentEditable="true"></div>
+        		<div className="ql-editor authorship"
+              id="ql-editor-2"
+              contentEditable="true"></div>
 
         		<div className="ql-paste-manager" contentEditable="true"></div>
         	</div>
 
           <div className="tag-list-container">
             <div className="tag-list">
-              <ReactCSSTransitionGroup transitionAppear={true} transitionName="tag-fade">
+              <ReactCSSTransitionGroup
+                transitionAppear={true}
+                transitionName="tag-fade">
                 {tags}
               </ReactCSSTransitionGroup>
 

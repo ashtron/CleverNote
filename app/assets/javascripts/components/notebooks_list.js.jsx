@@ -1,5 +1,7 @@
 /* globals React, NotebookStore, NotebookListItem, ApiUtil */
 
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 var NotebooksList = React.createClass({
   _onChange: function() {
     this.setState({ notebooks: NotebookStore.all() });

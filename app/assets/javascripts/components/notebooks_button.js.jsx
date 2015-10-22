@@ -1,4 +1,4 @@
-/* globals React, NotebookStore, NoteStore */
+/* globals React, NotebookStore, NoteStore, TagStore */
 
 var NotebooksButton = React.createClass({
   click: function() {

@@ -13,9 +13,10 @@ var NotebookListItem = React.createClass({
     var differentSelected = notebook.id !== NotebookStore.selectedNotebook().id;
 
     if (noneSelected || differentSelected) {
-      var selectedNotebook = NotebookStore.all().filter(function(storeNotebook) {
-        return notebook.title === storeNotebook.title;
-      });
+      var selectedNotebook =
+        NotebookStore.all().filter(function(storeNotebook) {
+          return notebook.title === storeNotebook.title;
+        });
 
       ApiActions.selectNotebook(selectedNotebook[0]);
     }

@@ -1,4 +1,4 @@
-/* globals React, ApiActions, NoteStore, ApiUtil */
+/* globals React, ApiActions, NoteStore, ApiUtil, TagStore */
 
 var NoteListItem = React.createClass({
   noteClick: function(event) {
