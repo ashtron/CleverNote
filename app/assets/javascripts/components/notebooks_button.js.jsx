@@ -6,6 +6,7 @@ var NotebooksButton = React.createClass({
     NotebookStore.deselect();
     NoteStore.resetNotes([]);
     TagStore.resetTags([]);
+    NotebookStore.resetNotebooks([]);
   },
 
   render: function() {

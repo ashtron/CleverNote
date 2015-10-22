@@ -1,0 +1,39 @@
+.note-slide-enter {
+  position: absolute;
+  left: -350px;
+}
+
+.note-slide-enter.note-slide-enter-active {
+  position: relative;
+  transition: 1s;
+  left: 0;
+}
+
+.note-slide-leave {
+  position: absolute;
+  left: 0;
+}
+
+.note-slide-leave.note-slide-leave-active {
+  position: relative;
+  transition: 1s;
+  left: -350px;
+}
+
+.tag-fade-enter {
+  opacity: 0.01;
+}
+
+.tag-fade-enter.tag-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.tag-fade-leave {
+  opacity: 1;
+}
+
+.tag-fade-leave.tag-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

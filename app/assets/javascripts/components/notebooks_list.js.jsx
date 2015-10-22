@@ -29,6 +29,17 @@ var NotebooksList = React.createClass({
       notebookCount = notebooksLength + " notebooks";
     }
 
+    var notebooks =
+      this.state.notebooks.map(function(notebook) {
+        return (
+          <NotebookListItem
+            key={notebook.id}
+            title={notebook.title}
+            body={notebook.body}>{notebook.title}
+          </NotebookListItem>
+        );
+      });
+
     return (
       <div>
         <div className="notebooks-list">
@@ -36,18 +47,14 @@ var NotebooksList = React.createClass({
             <span className="note-count">{notebookCount}</span>
           </div>
           <ul className="list-group">
-            {
-              this.state.notebooks.map(function(notebook) {
-                return (
-                  <NotebookListItem
-                    key={notebook.id}
-                    title={notebook.title}
-                    body={notebook.body}>{notebook.title}
-                  </NotebookListItem>
-                );
-              })
-            }
-            </ul>
+            <ReactCSSTransitionGroup
+              transitionAppear={true}
+              transitionName="note-slide"
+              transitionEnterTimeout={1000}
+              transitionLeaveTimeout={1000}>
+              {notebooks}
+            </ReactCSSTransitionGroup>
+          </ul>
         </div>
       </div>
     );

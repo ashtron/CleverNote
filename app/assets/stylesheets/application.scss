@@ -57,30 +57,6 @@ time, mark, audio, video {
   float: right;
 }
 
-//
-
-.example-enter {
-  position: absolute;
-  left: -350px;
-}
-
-.example-enter.example-enter-active {
-  position: relative;
-  transition: 1s;
-  left: 0;
-}
-
-.example-leave {
-  position: absolute;
-  left: 0;
-}
-
-.example-leave.example-leave-active {
-  position: relative;
-  transition: 1s;
-  left: -350px;
-}
-
 // .group:after {
 //   clear: both;
 //   content: "";

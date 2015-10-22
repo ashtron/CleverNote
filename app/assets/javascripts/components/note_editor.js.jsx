@@ -143,6 +143,15 @@ var NoteEditor = React.createClass({
         placeholder="name"></input>;
     }
 
+    var tags =
+      TagStore.all().map(function(tag) {
+        return (
+          <span key={tag.id} className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
+            #{tag.name}
+          </span>
+        );
+      });
+
     return (
       <div className="quill-wrapper">
         <div className="toolbar-container">
@@ -215,15 +224,9 @@ var NoteEditor = React.createClass({
 
           <div className="tag-list-container">
             <div className="tag-list">
-              {
-                TagStore.all().map(function(tag) {
-                  return (
-                    <span key={tag.id} className="tag" data-hover="delete?" onClick={that.onTagDeleteClick}>
-                      #{tag.name}
-                    </span>
-                  );
-                })
-              }
+              <ReactCSSTransitionGroup transitionAppear={true} transitionName="tag-fade">
+                {tags}
+              </ReactCSSTransitionGroup>
 
               {tagInput}
             </div>

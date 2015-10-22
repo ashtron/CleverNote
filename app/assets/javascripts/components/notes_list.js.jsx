@@ -50,7 +50,7 @@ var NotesList = React.createClass({
             <span className="note-count">{noteCount}</span>
           </div>
           <ul className="list-group">
-            <ReactCSSTransitionGroup transitionAppear={true} transitionName="example">
+            <ReactCSSTransitionGroup transitionAppear={true} transitionName="note-slide">
               {notes}
             </ReactCSSTransitionGroup>
           </ul>
