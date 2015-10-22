@@ -1,6 +1,8 @@
 /* globals React, NoteStore, NoteListItem, ApiUtil, NotebookStore */
 /* globals NotebooksButton */
 
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 var NotesList = React.createClass({
   _onChange: function() {
     this.setState({ notes: NotebookStore.allNotes() });
@@ -30,6 +32,17 @@ var NotesList = React.createClass({
       noteCount = notesLength + " notes";
     }
 
+    var notes =
+      this.state.notes.map(function(note) {
+        return (
+          <NoteListItem
+            key={note.id}
+            title={note.title}
+            body={note.body}>{note.title}
+          </NoteListItem>
+        );
+      });
+
     return (
       <div>
         <div className="notes-list">
@@ -37,18 +50,10 @@ var NotesList = React.createClass({
             <span className="note-count">{noteCount}</span>
           </div>
           <ul className="list-group">
-            {
-              this.state.notes.map(function(note) {
-                return (
-                  <NoteListItem
-                    key={note.id}
-                    title={note.title}
-                    body={note.body}>{note.title}
-                  </NoteListItem>
-                );
-              })
-            }
-            </ul>
+            <ReactCSSTransitionGroup transitionAppear={true} transitionName="example">
+              {notes}
+            </ReactCSSTransitionGroup>
+          </ul>
             <NotebooksButton/>
         </div>
       </div>
