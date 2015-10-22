@@ -1,3 +1,5 @@
+//Note slide.
+
 .note-slide-enter {
   position: absolute;
   left: -350px;
@@ -20,13 +22,15 @@
   left: -350px;
 }
 
+//Tag fade.
+
 .tag-fade-enter {
   opacity: 0.01;
 }
 
 .tag-fade-enter.tag-fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 .tag-fade-leave {
@@ -35,5 +39,5 @@
 
 .tag-fade-leave.tag-fade-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 175ms ease-in;
 }

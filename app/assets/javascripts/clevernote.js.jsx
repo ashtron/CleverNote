@@ -21,9 +21,7 @@ $(function() {
   });
 
   var routes = (
-      <Route path="/" component={App}>
-        <Route path="home" component={Homepage}/>
-      </Route>
+      <Route path="/" component={App}></Route>
   );
 
   React.render(<Router>{routes}</Router>, root);
