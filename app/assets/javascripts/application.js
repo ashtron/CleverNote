@@ -20,4 +20,5 @@
 //= require quill
 //= require react_router
 //= require components
+//= require konami
 //= require_tree .

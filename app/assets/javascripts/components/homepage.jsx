@@ -1,5 +1,5 @@
 /* globals React, NotebooksList, NotesList, NotebookEditor, NotebookStore */
-/* globals NoteEditor */
+/* globals NoteEditor, Konami */
 
 var Homepage = React.createClass({
   getInitialState: function() {
@@ -18,6 +18,19 @@ var Homepage = React.createClass({
 
   componentDidMount: function() {
     NotebookStore.addChangeListener(this._onChange);
+
+    var easterEgg = new Konami();
+    easterEgg.code = function() {
+      var elements = $("*");
+
+      if (elements.hasClass("rainbow")) {
+        $("*").removeClass("rainbow");
+      } else {
+        $("*").addClass("rainbow");
+      }
+    };
+
+    easterEgg.load();
   },
 
   componentWillUnmount: function() {
