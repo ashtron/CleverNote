@@ -90,7 +90,7 @@ var NoteEditor = React.createClass({
     //Enter keyCode is 13.
     if (event.keyCode === 13) {
       var noteId = NoteStore.selectedNote().id;
-      var name = event.target.value;
+      var name = event.target.value.replace(/#/g, "");
       var tag = { name: name };
 
       ApiUtil.createTag(tag, noteId);
