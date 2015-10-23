@@ -21,4 +21,5 @@
 //= require react_router
 //= require components
 //= require konami
+//= require ion-sound
 //= require_tree .

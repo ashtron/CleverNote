@@ -1,5 +1,5 @@
 /* globals React, NotebooksList, NotesList, NotebookEditor, NotebookStore */
-/* globals NoteEditor, Konami */
+/* globals NoteEditor, Konami, ion */
 
 var Homepage = React.createClass({
   getInitialState: function() {
@@ -19,6 +19,18 @@ var Homepage = React.createClass({
   componentDidMount: function() {
     NotebookStore.addChangeListener(this._onChange);
 
+    ion.sound({
+      sounds: [
+          {
+              name: "invincible_mario"
+          }
+      ],
+
+      volume: 0.9,
+      path: "../../sounds/",
+      preload: false
+    });
+
     var easterEgg = new Konami();
     easterEgg.code = function() {
       var elements = $("*");
@@ -26,6 +38,7 @@ var Homepage = React.createClass({
       if (elements.hasClass("rainbow")) {
         $("*").removeClass("rainbow");
       } else {
+        ion.sound.play("invincible_mario");
         $("*").addClass("rainbow");
       }
     };

@@ -1,8 +1,6 @@
 /* globals React, NoteStore, ApiUtil, NotebookStore, ReactRouter */
 
 var Navbar = React.createClass({
-  mixins: [ReactRouter.History],
-
   onCreateNotebookClick: function(event) {
     var title = this.state.newNotebookTitle;
     var description = this.state.newNotebookDescription;

@@ -13,7 +13,7 @@ var NotebooksButton = React.createClass({
     return (
       <button
         onClick={this.click}
-        className="glyphicon glyphicon-arrow-left">
+        className="btn btn-default glyphicon glyphicon-arrow-left">
       </button>
     );
   }
