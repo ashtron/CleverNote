@@ -2,6 +2,7 @@
 /* globals TagStore, ReactCSSTransitionGroup */
 
 var editor = {};
+var editorId = 1;
 
 var NoteEditor = React.createClass({
   componentDidMount: function() {
@@ -23,7 +24,6 @@ var NoteEditor = React.createClass({
     });
 
     if (this.state.inputTag) {
-      debugger;
       this.refs.tagInput.getDOMNode().focus();
     } else {
       this.refs.titleInput.getDOMNode().focus();
@@ -36,6 +36,7 @@ var NoteEditor = React.createClass({
   componentWillUnmount: function() {
     NoteStore.removeChangeListener(this._onChange);
     TagStore.removeChangeListener(this._onChange);
+    editor = {};
   },
 
   _onChange: function() {
@@ -66,7 +67,9 @@ var NoteEditor = React.createClass({
   onCreateClick: function() {
     TagStore.resetTags([]);
     NoteStore.deselect();
-    editor.setContents({"ops":[{"insert":""}]});
+
+    editor.focus();
+    editor.setContents({ "ops":[{"insert":""}] });
     this.refs.titleInput.getDOMNode().focus();
   },
 
@@ -225,7 +228,7 @@ var NoteEditor = React.createClass({
         </div>
 
         <div className="editor-container">
-        	<div id="editor" className="editor ql-container ql-snow">
+        	<div onClick={editor.focus} id="editor" className="editor ql-container ql-snow">
         		<div className="ql-editor authorship"
               id="ql-editor-2"
               contentEditable="true"></div>
