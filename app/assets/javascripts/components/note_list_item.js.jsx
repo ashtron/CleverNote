@@ -37,6 +37,8 @@ var NoteListItem = React.createClass({
 
     ApiUtil.deleteNote(selectedNote[0]);
     NoteStore.deselect();
+
+    editor.setContents({ "ops":[{"insert":""}] });
   },
 
   render: function() {

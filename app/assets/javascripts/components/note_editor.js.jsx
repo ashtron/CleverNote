@@ -2,7 +2,6 @@
 /* globals TagStore, ReactCSSTransitionGroup */
 
 var editor = {};
-var editorId = 1;
 
 var NoteEditor = React.createClass({
   componentDidMount: function() {
