@@ -68,7 +68,7 @@ var NoteEditor = React.createClass({
     NoteStore.deselect();
 
     editor.focus();
-    editor.setContents({ "ops":[{"insert":""}] });
+    editor.setContents({ "ops":[{"insert":"\n"}] });
     this.refs.titleInput.getDOMNode().focus();
   },
 
