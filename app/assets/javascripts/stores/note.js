@@ -60,7 +60,6 @@
           break;
         case NoteConstants.NOTE_DELETED:
           NoteStore.resetNotes(payload.notes);
-          NoteStore.deselect();
           NoteStore.emit(CHANGE_EVENT);
       }
     })
