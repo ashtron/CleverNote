@@ -23,9 +23,9 @@ var NoteEditor = React.createClass({
     });
 
     if (this.state.inputTag) {
-      this.refs.tagInput.getDOMNode().focus();
+      document.getElementById("tagInput").focus();
     } else {
-      this.refs.titleInput.getDOMNode().focus();
+      document.getElementById("titleInput").focus();
     }
 
     NoteStore.addChangeListener(this._onChange);
@@ -69,7 +69,7 @@ var NoteEditor = React.createClass({
 
     editor.focus();
     editor.setContents({ "ops":[{"insert":"\n"}] });
-    this.refs.titleInput.getDOMNode().focus();
+    document.getElementById("titleInput").focus();
   },
 
   onNewTagClick: function(event) {
@@ -133,7 +133,7 @@ var NoteEditor = React.createClass({
       tagInput =
       <input
         onKeyUp={this.handleKeyDown}
-        ref="tagInput"
+        id="tagInput"
         className="tag-input"
         placeholder="name">
       </input>;
@@ -218,6 +218,7 @@ var NoteEditor = React.createClass({
 
             <input
               ref="titleInput"
+              id="titleInput"
               className="toolbar-title"
               onChange={this._titleChange}
               placeholder="Title"

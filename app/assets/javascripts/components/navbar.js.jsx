@@ -23,6 +23,17 @@ var Navbar = React.createClass({
   },
 
   render: function() {
+    // Search.
+    // <form className="navbar-form navbar-left" role="search">
+    //   <div className="form-group">
+    //     <input
+    //       type="text"
+    //       className="form-control"
+    //       placeholder="Doesn't Work Yet"/>
+    //   </div>
+    //   <button type="submit" className="btn btn-default">Submit</button>
+    // </form>
+
     return (
       <nav id="nav-container" className="navbar navbar-default">
         <div className="container-fluid">
@@ -75,16 +86,6 @@ var Navbar = React.createClass({
                 </ul>
               </li>
             </ul>
-
-            <form className="navbar-form navbar-left" role="search">
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Doesn't Work Yet"/>
-              </div>
-              <button type="submit" className="btn btn-default">Submit</button>
-            </form>
 
             <ul className="nav navbar-nav sign-out-nav">
               <li><a>Guest</a></li>
