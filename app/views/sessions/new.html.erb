@@ -1,20 +1,24 @@
-<div class="sign-in-container">
-  <form class="form-signin" action="<%= session_url %>" method="post">
-    <input
-      type="hidden"
-      name="authenticity_token"
-      value="<%= form_authenticity_token %>">
+<div class="auth-wrap">
+  <div class="sign-in-container">
+    <form class="form-signin" action="<%= session_url %>" method="post">
+      <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
 
-    <label for="user_username" class="sr-only">Username</label>
-    <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
+      <label for="user_username" class="sr-only">Username</label>
+      <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
 
-    <label for="user_password" class="sr-only">Password</label>
-    <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
+      <label for="user_password" class="sr-only">Password</label>
+      <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
 
-    <!-- <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-    <button id="sign-up-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button> -->
-    <button id="guest-sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Guest Sign In</button>
-  </form>
+      <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+      <br>
+      Need an account? <a href="/users/new">Sign Up</a>
+      <br>
+      Or <a href="">use a guest account.</a>
+    </form>
+  </div>
 </div>
 
 <%= render "shared/errors" %>
