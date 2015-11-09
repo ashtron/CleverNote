@@ -1,3 +1,5 @@
+<!-- <script src="/vendor/assets/javascripts/typed.js"></script> -->
+
 <nav id="nav-container" class="navbar navbar-default landing-navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -18,41 +20,9 @@
     <div class="collapse navbar-collapse"
       id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#"
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false">
-            New Notebook
-            <span class="caret"></span></a>
-
-          <ul class="dropdown-menu">
-            <li><input
-              onChange={this.onNotebookTitleChange}
-              class="new-notebook-dropdown-field"
-              placeholder="Title">
-            </input></li>
-
-            <li><input
-              onChange={this.onNotebookDescriptionChange}
-              class="new-notebook-dropdown-field"
-              placeholder="Description">
-            </input></li>
-
-            <li><button
-              class="new-notebook-button"
-              onClick={this.onCreateNotebookClick}>Create
-            </button></li>
-          </ul>
-        </li>
-      </ul>
-
       <ul class="nav navbar-nav sign-out-nav">
         <li><a href="#sign-in-section">Sign In</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
         <li><a href="#">Guest Login</a></li>
       </ul>
 
@@ -72,16 +42,16 @@
           value="<%= form_authenticity_token %>">
 
         <label for="user_username" class="sr-only">Username</label>
-        <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
+        <input type="username" name="user[username]" id="user_username" class="form-control" placeholder="username" required="" autofocus="">
 
         <label for="user_password" class="sr-only">Password</label>
-        <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
+        <input type="password" name="user[password]" id="user_password" class="form-control" placeholder="password" required="">
 
         <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
         <br>
         Need an account? <a href="/users/new">Sign Up</a>
         <br>
-        Or <a href="">use a guest account.</a>
+        Or <a onclick="guestSignIn()">use a guest account.</a>
       </form>
     </div>  </div>
 </section>
@@ -131,3 +101,15 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
   </div>
 </section>
+
+<script>
+  var guestSignIn = function() {
+    var usernameField = document.getElementById('user_username');
+    var passwordField = document.getElementById('user_password');
+    var signInButton = document.getElementById('sign-in-button');
+
+    usernameField.value = "guest";
+    passwordField.value = "password";
+    signInButton.click();
+  }
+</script>

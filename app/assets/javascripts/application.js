@@ -22,4 +22,5 @@
 //= require components
 //= require konami
 //= require ion-sound
+//= require typed
 //= require_tree .
