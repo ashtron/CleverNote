@@ -1,29 +1,4 @@
-<!-- <div class="auth-wrap">
-  <div class="sign-in-container">
-    <form class="form-signin" action="<%= session_url %>" method="post">
-      <input
-        type="hidden"
-        name="authenticity_token"
-        value="<%= form_authenticity_token %>">
-
-      <label for="user_username" class="sr-only">Username</label>
-      <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
-
-      <label for="user_password" class="sr-only">Password</label>
-      <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
-
-      <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-      <br>
-      Need an account? <a href="/users/new">Sign Up</a>
-      <br>
-      Or <a href="">use a guest account.</a>
-    </form>
-  </div>
-</div>
-
-<%= render "shared/errors" %> -->
-
-<nav id="nav-container" class="navbar navbar-default">
+<nav id="nav-container" class="navbar navbar-default landing-navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button"
@@ -76,7 +51,7 @@
       </ul>
 
       <ul class="nav navbar-nav sign-out-nav">
-        <li><a href="#">Sign In</a></li>
+        <li><a href="#sign-in-section">Sign In</a></li>
         <li><a href="#">Sign Up</a></li>
         <li><a href="#">Guest Login</a></li>
       </ul>
@@ -84,6 +59,39 @@
     </div>
   </div>
 </nav>
+
+<%= render "shared/errors" %>
+
+<section id="sign-in-section" class="module parallax parallax-0">
+  <div class="container">
+    <div class="sign-in-container">
+      <form class="form-signin" action="<%= session_url %>" method="post">
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+
+        <label for="user_username" class="sr-only">Username</label>
+        <input type="username" name="user[username]" id="user_username" class="form-control" value="guest" required="" autofocus="">
+
+        <label for="user_password" class="sr-only">Password</label>
+        <input type="password" name="user[password]" id="user_password" class="form-control" value="password" required="">
+
+        <button id="sign-in-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        <br>
+        Need an account? <a href="/users/new">Sign Up</a>
+        <br>
+        Or <a href="">use a guest account.</a>
+      </form>
+    </div>  </div>
+</section>
+
+<section class="module content">
+  <div class="container">
+    <h2>Lorem Ipsum Dolor</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+  </div>
+</section>
 
 <section class="module parallax parallax-1">
   <div class="container">
